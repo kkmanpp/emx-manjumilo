@@ -1,10 +1,82 @@
 {
-	"page": {
-		"title": "Next.js i18n 範例",
-		"desc": "搞懂 Next.js實現 i18n 國際化多語言(基於App Router)"
-	},
-	"home": {
-		"title": "你好, Next.js i18n",
-		"desc": "這是一個 Next.js i18n 範例"
-	}
+  "page": {
+    "title": "Next.js i18n 範例",
+    "desc": "搞懂 Next.js實現 i18n 國際化多語言(基於App Router)"
+  },
+  "home": {
+    "title": "你好, Next.js i18n",
+    "desc": "這是一個 Next.js i18n 範例"
+  },
+  "profile": {
+    "sections": {
+      "company_overview": "公司概覽",
+      "company_mission_and_purpose": "公司宗旨與使命",
+      "core_value": "核心價值",
+      "product_overview": "我們的產品",
+      "company_future_outlook": "未來展望"
+    },
+    "company_overview": {
+      "name": {
+        "key": "公司名稱",
+        "value": "譽浚貿易（米潞健康一族）"
+      },
+      "established": {
+        "key": "成立時間",
+        "value": "2008年"
+      },
+      "core_business": {
+        "key": "業務範疇",
+        "value": "批發及零售業務"
+      },
+      "product_type": {
+        "key": "產品種類",
+        "value": "批發及零售"
+      }
+    },
+    "company_mission_and_purpose": {
+      "key": "公司宗旨與使命",
+      "value": "譽浚貿易（米潞健康一族）自2008年成立以來，一直秉持著推動環保與健康生活的理念，致力於提供來自日本的全天然、無添加、經過嚴格檢驗的健康產品。我們的目標是成為健康生活方式的引領者，為全球消費者提供高品質的環保健康食品與飲料，促進身心健康並改善生活質素。\n我們專注於將安全、可靠的健康產品帶入日常生活，並提倡可持續的環保理念。通過與日本及其他國際品牌的合作，我們為消費者提供全面的健康選擇，並不斷探索創新產品來滿足市場需求。"
+    },
+    "core_value": {
+      "all_natural_ingredients": {
+        "key": "全天然成分",
+        "value": "我們的產品選擇來自日本，堅持使用全天然材料，避免任何化學添加劑，確保每一位顧客都能享受健康、無負擔的產品。"
+      },
+      "environmental_philosophy": {
+        "key": "環保理念",
+        "value": "我們致力於可持續發展，所有產品均符合環保標準，包裝選擇可回收材料，減少對地球的影響。"
+      },
+      "quality_assurance": {
+        "key": "品質保證",
+        "value": "我們的所有產品都經過嚴格的品質控制與檢測，確保符合國際認證標準，讓每一位消費者都能放心使用。"
+      },
+      "innovation_and_diversity": {
+        "key": "創新與多樣性",
+        "value": "我們不斷創新，根據市場需求推出多樣化的健康產品，涵蓋各類營養補充品、健康飲料等。"
+      }
+    },
+    "product_overview": {
+      "summary": "譽浚貿易的產品線涵蓋各類健康食品與飲料，主要包括但不限於以下類別：",
+      "natural_nutritional_supplements": {
+        "key": "天然營養補充品",
+        "value": "各類天然維生素與礦物質補充劑，旨在幫助消費者維持健康的免疫系統和身體機能。"
+      },
+      "organic_drinks": {
+        "key": "有機飲品",
+        "value": "選用天然有機原料，製作無添加糖分的健康飲料，既滿足口感又保護健康。"
+      },
+      "healthy_snacks": {
+        "key": "健康小食",
+        "value": "多種低糖、高纖維的健康小食選擇，提供全天候的能量補充。"
+      },
+      "beauty_and_skincare": {
+        "key": "美容與護膚品",
+        "value": "以天然成分製作的美容產品，適合所有膚質，讓您保持內外健康。"
+      }
+    },
+    "company_future_outlook": {
+      "key": "未來展望",
+      "value": "譽浚貿易將繼續致力於引領健康與環保生活方式的發展，並不斷拓展產品線，以滿足不斷增長的市場需求。公司計劃在未來幾年內進一步擴展國際市場，特別是深入亞洲及大中華區，並推動與更多國際品牌的合作，共同開發新型健康產品，為全球消費者帶來更多選擇。\n我們期待與您共同邁向更健康、更環保的明天，為未來的世代創造更美好的生活環境。"
+    }
+  }
 }
