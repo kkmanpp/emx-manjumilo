@@ -12,12 +12,12 @@ export default function NavBar() {
 	];
 	return (
 		<>
-			<ul className="list-none bg-gray-900 overflow-hidden px-4 rounded-2xl">
+			<ul className="list-none bg-Grey-900 overflow-hidden px-4 rounded-2xl">
 				{TAB_LIST.map((tab, index) => {
 					return (
 						<li
 							key={index}
-							className="inline-block text-center text-white p-3 cursor-pointer hover:bg-gray-700 active:bg-gray-900"
+							className="inline-block text-center text-white p-3 cursor-pointer hover:bg-Gray-700 active:bg-Gray-900"
 						>
 							<Link href={tab.path}>{tab.label}</Link>
 						</li>
