@@ -17,7 +17,7 @@ export default function NavBar() {
 					return (
 						<li
 							key={index}
-							className="inline-block text-center text-white p-3 cursor-pointer hover:bg-Gray-700 active:bg-Gray-900"
+							className="inline-block text-center text-white p-3 cursor-pointer hover:bg-Grey-700 active:bg-Grey-900"
 						>
 							<Link href={tab.path}>{tab.label}</Link>
 						</li>
