@@ -1,4 +1,4 @@
-import OutlineButton from "./OutlineButton";
+import LinkButton from "./LinkButton";
 import Image from "next/image";
 
 export default function Card({
@@ -28,10 +28,10 @@ export default function Card({
 			</div>
 			<div className="grid grid-cols-[2fr_1fr]">
 				<div className="col-start-2 flex flex-col justify-end">
-					<OutlineButton
+					<LinkButton
 						label="More"
 						onClick={console.log("press button")}
-					></OutlineButton>
+					></LinkButton>
 				</div>
 			</div>
 		</div>

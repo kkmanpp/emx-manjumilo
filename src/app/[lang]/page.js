@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getDictionary } from "./dictionaries";
+import LinkButton from "@/components/LinkButton";
 
 export default async function Home({ params: { lang } }) {
 	const t = await getDictionary(lang);
@@ -51,6 +52,7 @@ export default async function Home({ params: { lang } }) {
 						Read our docs
 					</a>
 				</div>
+				<LinkButton label="More" onClick={console.log("pressed")}></LinkButton>
 			</main>
 			<footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
 				<a
