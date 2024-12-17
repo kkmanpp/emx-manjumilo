@@ -1,5 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./../../app/globals.css";
+import Image from "next/image";
+import bottomLogo from "../../../public/buttom_logo.jpg";
+import company from "../../../public/company.jpg";
+import NavBar from "@/components/Navbar";
+import facebook from "../../../public/facebook.svg";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -26,7 +31,44 @@ export default function RootLayout({ children, params }) {
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				{children}
+				<div className="grid grid-rows-[auto_auto_1fr_10rem] items-center justify-items-center min-h-screen bg-Yellow-50">
+					<div className="w-full">
+						<div className="flex flex-row justify-end gap-x-4">
+							<div>繁體中文</div>
+							<div>簡體中文</div>
+						</div>
+						<Image
+							src={company}
+							alt="company-img"
+							height={500}
+							className="sticky top-0 left-0"
+						/>
+					</div>
+					<div className="flex flex-col justify-center items-center relative bottom-4">
+						<NavBar />
+					</div>
+					<main>{children}</main>
+					<footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center absolute bottom-0 left-0">
+						<div className="my-4">
+							<Image
+								src={bottomLogo}
+								alt="manjumilo"
+								height={800}
+								width={300}
+							/>
+						</div>
+
+						<div className="text-Grey-500">
+							Copyright © 2013 Milo company, All Rights Reserved ®
+						</div>
+						<div
+							onClick={console.log("go to facebook")}
+							className="cursor-pointer py-2"
+						>
+							<Image src={facebook} alt="facebook" height={40} width={40} />
+						</div>
+					</footer>
+				</div>
 			</body>
 		</html>
 	);
