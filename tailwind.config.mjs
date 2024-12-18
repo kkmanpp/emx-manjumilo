@@ -14,8 +14,6 @@ export default {
 		},
 		extend: {
 			colors: {
-				// background: "var(--background)",
-				// foreground: "var(--foreground)",
 				transparent: "transparent",
 				White: "#FFFFFF",
 				Grey: {
@@ -74,6 +72,23 @@ export default {
 					600: "#1383F0",
 					700: "#1670DC",
 				},
+			},
+			fontSize: {
+				p5: "0.9rem",
+				p4: "1.1rem", // xs
+				p3: "1.3rem", // sm
+				p2: "1.4rem", // tiny
+				p1: "1.6rem", // base
+			},
+			fontWeight: {
+				medium: 500, // Medium
+				bold: 700, // Bold
+				hairline: 100,
+				thin: 200,
+				light: 300,
+				normal: 400,
+				semibold: 600,
+				extrabold: 800,
 			},
 		},
 	},
