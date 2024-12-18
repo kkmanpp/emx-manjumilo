@@ -6,7 +6,7 @@ export default function NavBar() {
 		{ label: "公司簡介", path: "/profile" },
 		{ label: "所有產品", path: "/new-products" },
 		{ label: "醫療知識", path: "/knowledge" },
-		{ label: "飲用者心聲", path: "/user-feedback" },
+		{ label: "飲用者心聲", path: "/feedback" },
 		{ label: "保障知多少", path: "/safeguard" },
 		{ label: "聯絡方法", path: "/contact" },
 	];

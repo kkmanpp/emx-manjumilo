@@ -103,6 +103,6 @@ export default async function Home({ params }) {
 		// 		</a>
 		// 	</footer>
 		// </div>
-		<div></div>
+		<div>Home</div>
 	);
 }
