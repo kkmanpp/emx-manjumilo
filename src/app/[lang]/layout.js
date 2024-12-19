@@ -35,7 +35,7 @@ export default async function RootLayout({ children, params }) {
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<div className="grid grid-rows-[auto_auto_auto_1fr_10rem] items-center justify-items-center min-h-screen bg-Yellow-50">
+				<div className="grid grid-rows-[auto_auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50">
 					<div className="w-full">
 						<Image src={company} alt="company-img" height={500} />
 					</div>
@@ -55,7 +55,7 @@ export default async function RootLayout({ children, params }) {
 						<NavBar />
 					</div>
 					<main>{children}</main>
-					<footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center absolute bottom-0 left-0">
+					<footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center ">
 						<div className="my-4">
 							<Image
 								src={bottomLogo}
