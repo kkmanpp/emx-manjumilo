@@ -27,9 +27,9 @@ export default async function Profile({ params }) {
     beauty_and_skincare,
   } = product_overview;
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:text-gray-900">
       {/* Company Overview */}
-      <main className="container mx-auto p-6 shadow-lg mt-8 rounded-lg">
+      <main className="container mx-auto p-6 bg-white shadow-lg mt-8 rounded-lg">
         <section>
           <div className="text-3xl font-semibold text-teal-700 mb-4">
             {sections.company_overview}
