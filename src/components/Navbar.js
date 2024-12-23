@@ -4,7 +4,7 @@ export default function NavBar() {
 	const TAB_LIST = [
 		{ label: "首頁", path: "/" },
 		{ label: "公司簡介", path: "/profile" },
-		{ label: "所有產品", path: "/new-products" },
+		{ label: "所有產品", path: "/products" },
 		{ label: "醫療知識", path: "/knowledge" },
 		{ label: "飲用者心聲", path: "/feedback" },
 		{ label: "保障知多少", path: "/safeguard" },
