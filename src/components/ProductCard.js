@@ -1,0 +1,83 @@
+import Image from "next/image";
+
+export default function ProductCard({ lang, product, dictionary }) {
+	const t = dictionary.product;
+	return (
+		<div className="grid grid-rows-2 gap-4 bg-white rounded-2xl shadow-lg p-4 dark:text-Grey-900">
+			<div className="grid grid-cols-2 gap-x-4">
+				<div
+					className={`grid grid-flow-row gap-2 items-align ${
+						product.image.length > 1
+							? "grid-cols-2 "
+							: "grid-cols-1 justify-self-center"
+					}`}
+				>
+					{product.image.map((product, index) => {
+						return (
+							<div key={index} className="w-[auto]">
+								<Image src={product} width={150} height={300} alt="product" />
+							</div>
+						);
+					})}
+				</div>
+				<div className="flex flex-col gap-y-2">
+					<div className="font-bold text-p2 dark:text-Grey-900">
+						{product.name[lang]}
+					</div>
+					{product.slogan && <div className="mb-4">{product.slogan[lang]}</div>}
+					<div>{t.size}:</div>
+					<div className="flex flex-row gap-x-4 ">
+						{product.size.map((product, index) => {
+							return (
+								<div
+									className="border rounded-xl border-Green-600 bg-[#e0ece8] dark: text-Grey-900 p-2"
+									key={index}
+								>
+									{product[lang]}
+								</div>
+							);
+						})}
+					</div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div className="font-semibold my-2">{t.description}</div>
+					<div>{product.description[lang]}</div>
+				</div>
+				<div>
+					<div className="font-semibold my-2">{t.ingredients}</div>
+					<div>{product.ingredients[lang]}</div>
+				</div>
+				<div>
+					<div className="font-semibold my-2">{t.directions}</div>
+					<div>{product.directions[lang]}</div>
+				</div>
+				{product.nutrition_key[lang] && (
+					<div className="">
+						<div className="font-semibold my-2">{t.suitable_for}</div>
+						<div>{product.suitable_for[lang]}</div>
+					</div>
+				)}
+				{product.suitable_for[lang] && (
+					<div className="">
+						<div className="font-semibold my-2">{t.suitable_for}</div>
+						<div>{product.suitable_for[lang]}</div>
+					</div>
+				)}
+				{product.advisory_info[lang] && (
+					<div className="text-p5 text-Grey-600">
+						<div className="font-semibold my-2">{t.advisory_info}</div>
+						<div>{product.advisory_info[lang]}</div>
+					</div>
+				)}
+				{product.reminder[lang] && (
+					<div className="text-p5 text-Grey-600">
+						<div className="font-semibold my-2">{t.reminder}</div>
+						<div>{product.reminder[lang]}</div>
+					</div>
+				)}
+			</div>
+		</div>
+	);
+}
