@@ -10,8 +10,6 @@ import HamburgerMenu from "@/components/HamburgerMenu";
 import facebook from "../../../public/facebook.svg";
 import { getDictionary } from "./dictionaries";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
-import LoaderWrapper from "@/components/LoaderWrapper";
-import { LoadingProvider } from "@/context/LoadingContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
