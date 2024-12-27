@@ -11,7 +11,6 @@ import facebook from "../../../public/facebook.svg";
 import { getDictionary } from "./dictionaries";
 import { headers } from "next/headers";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
-import facebook from "../../../public/facebook.svg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
