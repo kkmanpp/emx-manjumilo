@@ -1,4 +1,18 @@
 {
+  "languages": {
+    "cht": "繁體中文",
+    "chs": "簡體中文"
+  },
+  "tabs": {
+    "homepage": "首頁",
+    "profile": "公司簡介",
+    "products": "所有產品",
+    "knowledge": "醫療知識",
+    "feedback": "飲用者心聲",
+    "safeguard": "保障知多少",
+    "contact": "聯絡方法",
+    "language": "語言"
+  },
   "page": {
     "title": "Next.js i18n 範例",
     "desc": "搞懂 Next.js實現 i18n 國際化多語言(基於App Router)"
