@@ -2,16 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import LocaleSwitcher from "./LocaleSwitcher";
 
-export default function HamburgerMenu({ tabs, languages }) {
-  console.log(tabs);
-
-  const LANGUAGES = [
-    { label: languages.cht, code: "zh-tw" },
-    { label: languages.chs, code: "zh-cn" },
-    { label: "English", code: "en" },
-  ];
-
+export default function HamburgerMenu({
+  tabs,
+  languageTab,
+  languages,
+  locale,
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
@@ -37,12 +35,6 @@ export default function HamburgerMenu({ tabs, languages }) {
         </svg>
       </button>
 
-      {/*  <div
-        className={`fixed top-0 right-0 h-full bg-gray-900 text-white z-40 w-64 transform transition-transform ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      > */}
-
       {/* Sliding Menu */}
       <div
         className={`fixed top-0 left-0 h-full w-full bg-Green-700 z-40 transition-transform transform ${
@@ -55,9 +47,9 @@ export default function HamburgerMenu({ tabs, languages }) {
             {tabs.map((tab, index) => (
               <li key={index} className="border-b border-Grey-800">
                 <Link
-                  href={tab.path}
+                  href={`/${locale}${tab.path}`}
                   className="block text-white px-4 py-3 hover:text-Grey-300"
-                  onClick={() => setMenuOpen(false)} // Close menu on item click
+                  onClick={() => setMenuOpen(false)}
                 >
                   {tab.label}
                 </Link>
@@ -70,26 +62,27 @@ export default function HamburgerMenu({ tabs, languages }) {
                 className="block text-white px-4 py-3 hover:text-Grey-300 w-full text-left"
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
               >
-                語言
+                {languageTab}
               </button>
 
               {/* Sublist */}
               {languageMenuOpen && (
                 <ul className="absolute top-full left-0 bg-Grey-700 w-full">
-                  {LANGUAGES.map((language, index) => (
-                    <li key={index} className="border-b border-Grey-600">
-                      <button
-                        className="block text-white px-4 py-3 hover:text-Grey-300 w-full text-left"
-                        onClick={() => {
-                          console.log(`Language selected: ${language.code}`);
-                          setMenuOpen(false); // Close menu after selection
-                          setLanguageMenuOpen(false); // Close sublist
-                        }}
-                      >
-                        {language.label}
-                      </button>
-                    </li>
-                  ))}
+                  {Object.keys(languages).map((key, index) => {
+                    return (
+                      <li key={index} className="border-b border-Grey-600">
+                        <LocaleSwitcher
+                          locale={languages[key]}
+                          code={key}
+                          style="block text-white px-4 py-3 hover:text-Grey-300 w-full text-left"
+                          additionalAction={() => {
+                            setMenuOpen(false);
+                            setLanguageMenuOpen(false);
+                          }}
+                        />
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
             </li>

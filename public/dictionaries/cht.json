@@ -10,7 +10,8 @@
     "knowledge": "醫療知識",
     "feedback": "飲用者心聲",
     "safeguard": "保障知多少",
-    "contact": "聯絡方法"
+    "contact": "聯絡方法",
+    "language": "語言"
   },
   "page": {
     "title": "Next.js i18n 範例",
