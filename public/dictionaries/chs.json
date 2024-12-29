@@ -302,5 +302,15 @@
         "value": "澳门苏亚利斯博士大马路25号互助会大厦六楼602室"
       }
     }
+  },
+  "product": {
+    "size": "产品大小",
+    "description": "产品描述",
+    "nutrition": "营养成分",
+    "directions": "建议用法",
+    "reminder": "注意事项",
+    "ingredients": "产品说明",
+    "suitable_for": "适合人士",
+    "advisory_info": "贮存方法"
   }
 }

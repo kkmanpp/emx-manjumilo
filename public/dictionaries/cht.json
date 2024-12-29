@@ -302,5 +302,15 @@
         "value": "澳門蘇亞利斯博士大馬路25號互助會大廈六樓602室"
       }
     }
+  },
+  "product": {
+    "size": "產品大小",
+    "description": "產品描述",
+    "nutrition": "營養成分",
+    "directions": "建議用法",
+    "reminder": "注意事項",
+    "ingredients": "產品說明",
+    "suitable_for": "適合人士",
+    "advisory_info": "貯存方法"
   }
 }
