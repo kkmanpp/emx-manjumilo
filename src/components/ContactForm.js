@@ -1,33 +1,65 @@
 "use client";
 import React, { useState } from "react";
+import Modal from "@/components/Modal";
 
 export default function ContactForm({ t }) {
   const contact = t.contact;
+  const validation = t.validation;
+  const { formFields, ourInfo } = contact;
+  const modal = t.modal;
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    feedback: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [errors, setErrors] = useState({});
+  const [modalState, setModalState] = useState({
+    isVisible: false,
+    title: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = validation.nameRequired;
+    }
+    if (!formData.email.trim() && !formData.phone.trim()) {
+      newErrors.email = validation.emailOrPhoneRequired;
+      newErrors.phone = validation.phoneOrEmailRequired;
+    }
+    if (!formData.feedback.trim()) {
+      newErrors.feedback = validation.feedbackRequired;
+    }
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = validation.invalidEmail;
+    }
+    if (formData.phone && !/^\d{8,15}$/.test(formData.phone)) {
+      newErrors.phone = validation.invalidPhone;
+    }
+    return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setErrorMessage("");
-    setSuccessMessage("");
-    if (!formData.email && !formData.phone) {
-      setErrorMessage("Either email or phone is required.");
+    setErrors({});
+
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       setIsSubmitting(false);
       return;
     }
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -36,14 +68,25 @@ export default function ContactForm({ t }) {
       });
 
       if (response.ok) {
-        setSuccessMessage("Email sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setModalState({
+          isVisible: true,
+          title: modal.title.submissionSuccessful,
+          message: modal.message.feedbackSent,
+        });
+        setFormData({ name: "", email: "", phone: "", feedback: "" });
       } else {
-        const data = await response.json();
-        setErrorMessage(data.message || "Failed to send email.");
+        setModalState({
+          isVisible: true,
+          title: modal.title.submissionFailed,
+          message: modal.message.failedToSendFeedback,
+        });
       }
     } catch (error) {
-      setErrorMessage("An error occurred. Please try again later.");
+      setModalState({
+        isVisible: true,
+        title: modal.title.submissionFailed,
+        message: modal.message.errorOccurred,
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -66,108 +109,121 @@ export default function ContactForm({ t }) {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              {contact.name.key}
+              {formFields.name.key}
             </label>
             <input
               type="text"
               id="name"
               name="name"
-              required
               value={formData.name}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder={contact.name.placeholder}
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+            )}
           </div>
           <div>
             <label
               htmlFor="phone"
               className="block text-sm font-medium text-gray-700"
             >
-              {contact.phone.key}
+              {formFields.phone.key}
             </label>
             <input
               type="text"
               id="phone"
               name="phone"
-              required
               value={formData.phone}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder={contact.phone.placeholder}
             />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+            )}
           </div>
           <div>
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              {contact.email.key}
+              {formFields.email.key}
             </label>
             <input
-              type="email"
+              type="text"
               id="email"
               name="email"
-              required
               value={formData.email}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder={contact.email.placeholder}
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
           <div>
             <label
               htmlFor="message"
               className="block text-sm font-medium text-gray-700"
             >
-              {contact.message.key}
+              {formFields.feedback.key}
             </label>
             <textarea
-              id="message"
-              name="message"
+              id="feedback"
+              name="feedback"
               rows="5"
-              required
-              value={formData.message}
+              value={formData.feedback}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder={contact.message.placeholder}
             ></textarea>
+            {errors.feedback && (
+              <p className="text-red-500 text-sm mt-1">{errors.feedback}</p>
+            )}
           </div>
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 
+                          ${
+                            isSubmitting
+                              ? "bg-gray-400 text-gray-700 cursor-not-allowed"
+                              : "bg-green-600 hover:bg-green-700 text-white focus:ring-blue-500"
+                          }`}
             disabled={isSubmitting}
           >
-            {contact.submit}
+            {formFields.submit}
           </button>
         </form>
       </div>
       <div className="bg-gray-50 p-6 sm:p-10 border-t border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-700">
-          {contact.ourinfo.title}
-        </h2>
+        <h2 className="text-lg font-semibold text-gray-700">{ourInfo.title}</h2>
         <div className="text-gray-600 mt-2">
-          <strong>{contact.ourinfo.email.key}:</strong>{" "}
+          <strong>{ourInfo.email.key}:</strong>{" "}
           <a
-            href={`mailto:${contact.ourinfo.email.value}`}
+            href={`mailto:${ourInfo.email.value}`}
             className="text-gray-600 hover:underline"
           >
-            {contact.ourinfo.email.value}
+            {ourInfo.email.value}
           </a>
         </div>
         <div className="text-gray-600 mt-1 flex">
-          <strong>{contact.ourinfo.phone.key}:</strong>{" "}
+          <strong>{ourInfo.phone.key}:</strong>{" "}
           <div>
-            {contact.ourinfo.phone.value.map((value, index) => (
+            {ourInfo.phone.value.map((value, index) => (
               <div key={index}>{value}</div>
             ))}
           </div>
         </div>
         <div className="text-gray-600 mt-1">
-          <strong>{contact.ourinfo.address.key}:</strong>{" "}
-          {contact.ourinfo.address.value}
+          <strong>{ourInfo.address.key}:</strong> {ourInfo.address.value}
         </div>
       </div>
+      <Modal
+        isVisible={modalState.isVisible}
+        title={modalState.title}
+        message={modalState.message}
+        onClick={() => setModalState({ ...modalState, isVisible: false })}
+        buttonLabel={modal.buttonLabel.ok}
+      />
     </div>
   );
 }

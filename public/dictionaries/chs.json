@@ -270,24 +270,26 @@
       "我们会积极尊重您的意见－您的建议是我们宝贵的资产！",
       "来信请注明姓名或机构、联系电邮、 电话，我们会尽快回覆您,谢谢！"
     ],
-    "name": {
-      "key": "姓名或机构",
-      "placeholder": ""
+    "formFields": {
+      "name": {
+        "key": "姓名或机构",
+        "placeholder": ""
+      },
+      "phone": {
+        "key": "联络电话",
+        "placeholder": ""
+      },
+      "email": {
+        "key": "电邮地址",
+        "placeholder": ""
+      },
+      "feedback": {
+        "key": "您的意见",
+        "placeholder": ""
+      },
+      "submit": "送出"
     },
-    "phone": {
-      "key": "联络电话",
-      "placeholder": ""
-    },
-    "email": {
-      "key": "电邮地址",
-      "placeholder": ""
-    },
-    "message": {
-      "key": "您的意见",
-      "placeholder": ""
-    },
-    "submit": "送出",
-    "ourinfo": {
+    "ourInfo": {
       "title": "联络资讯",
       "phone": {
         "key": "电话",
@@ -312,5 +314,28 @@
     "ingredients": "产品说明",
     "suitable_for": "适合人士",
     "advisory_info": "贮存方法"
+  },
+  "validation": {
+    "nameRequired": "请输入名字",
+    "phoneOrEmailRequired": "请输入电话号码或邮件",
+    "emailOrPhoneRequired": "请输入邮件或电话号码",
+    "feedbackRequired": "请输入您的意见",
+    "invalidEmail": "请输入有效的电子邮件地址",
+    "invalidPhone": "请输入有效的电话号码"
+  },
+  "modal": {
+    "title": {
+      "submissionSuccessful": "提交成功",
+      "submissionFailed": "提交失败"
+    },
+    "message": {
+      "feedbackSent": "您的宝贵意见已成功发送，我们会尽快回覆您，谢谢！",
+      "failedToSendFeedback": "很抱歉，我们无法成功发送您的意见。请检查您的网络连线，或稍后再试一次。我们对此造成的不便深感抱歉。",
+      "errorOccurred": "很抱歉，发生了一些错误。请稍后再试，感谢您的耐心与理解。"
+    },
+    "buttonLabel": {
+      "close": "关闭",
+      "ok": "确定"
+    }
   }
 }
