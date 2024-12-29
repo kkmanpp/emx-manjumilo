@@ -5,5 +5,6 @@ import LinkButton from "@/components/LinkButton";
 export default async function Home({ params }) {
   const { lang } = await params;
   const t = await getDictionary(lang);
-  return <div>Home</div>;
+
+  return <div></div>;
 }

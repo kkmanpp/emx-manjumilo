@@ -30,7 +30,7 @@ export default function ProductViewer({ lang, dictionary }) {
   }, []);
 
   if (!productList) return;
-  if (error) return <div>{error}</div>;
+  if (error) return <div className="text-red-600">{error}</div>;
 
   return (
     <div className="w-[45rem] grid grid-cols-2 gap-4 grid-flow-row">
