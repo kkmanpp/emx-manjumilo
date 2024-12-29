@@ -9,7 +9,6 @@ import NavBar from "@/components/Navbar";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import facebook from "../../../public/facebook.svg";
 import { getDictionary } from "./dictionaries";
-import { headers } from "next/headers";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import Loader from "@/components/Loader";
 import { LoadingProvider } from "@/context/LoadingContext";
@@ -33,12 +32,6 @@ export async function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }) {
-  const headersList = await headers();
-  console.log(headersList);
-  const currentPath = headersList.get("x-current-path") || "/";
-  console.log(currentPath);
-
-  // console.log("public url", process.env);
   const { lang } = await params;
   const t = await getDictionary(lang);
   const {
@@ -82,12 +75,6 @@ export default async function RootLayout({ children, params }) {
                     <div key={key}>
                       <LocaleSwitcher locale={languages[key]} code={key} />
                     </div>
-                    // <div
-                    //   key={key}
-                    //   className="cursor-pointer hover:text-Green-700"
-                    // >
-                    //   {languages[key]}
-                    // </div>
                   );
                 })}
               </div>
