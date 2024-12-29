@@ -270,24 +270,26 @@
       "我們會積極尊重您的意見－您的建議是我們寶貴的資產！",
       "來信請註明姓名或機構、聯繫電郵、 電話，我們會盡快回覆您,謝謝！"
     ],
-    "name": {
-      "key": "姓名或機構",
-      "placeholder": ""
+    "formFields": {
+      "name": {
+        "key": "姓名或機構",
+        "placeholder": ""
+      },
+      "phone": {
+        "key": "聯絡電話",
+        "placeholder": ""
+      },
+      "email": {
+        "key": "電郵地址",
+        "placeholder": ""
+      },
+      "feedback": {
+        "key": "您的意見",
+        "placeholder": ""
+      },
+      "submit": "送出"
     },
-    "phone": {
-      "key": "聯絡電話",
-      "placeholder": ""
-    },
-    "email": {
-      "key": "電郵地址",
-      "placeholder": ""
-    },
-    "message": {
-      "key": "您的意見",
-      "placeholder": ""
-    },
-    "submit": "送出",
-    "ourinfo": {
+    "ourInfo": {
       "title": "聯絡資訊",
       "phone": {
         "key": "電話",
@@ -301,6 +303,29 @@
         "key": "地址",
         "value": "澳門蘇亞利斯博士大馬路25號互助會大廈六樓602室"
       }
+    }
+  },
+  "validation": {
+    "nameRequired": "請輸入名字",
+    "phoneOrEmailRequired": "請輸入電話號碼或郵件",
+    "emailOrPhoneRequired": "請輸入郵件或電話號碼",
+    "feedbackRequired": "請輸入您的意見",
+    "invalidEmail": "請輸入有效的電子郵件地址",
+    "invalidPhone": "請輸入有效的電話號碼"
+  },
+  "modal": {
+    "title": {
+      "submissionSuccessful": "提交成功",
+      "submissionFailed": "提交失敗"
+    },
+    "message": {
+      "feedbackSent": "您的寶貴意見已成功發送，我們會盡快回覆您，謝謝！",
+      "failedToSendFeedback": "很抱歉，我們無法成功發送您的意見。請檢查您的網絡連線，或稍後再試一次。我們對此造成的不便深感抱歉。",
+      "errorOccurred": "很抱歉，發生了一些錯誤。請稍後再試，感謝您的耐心與理解。"
+    },
+    "buttonLabel": {
+      "close": "關閉",
+      "ok": "確定"
     }
   }
 }
