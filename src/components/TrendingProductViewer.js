@@ -39,7 +39,7 @@ export default function TrendingProductViewer({ lang }) {
 		);
 
 	return (
-		<div className="grid grid-cols-4 gap-4 w-[60rem]">
+		<div className="grid grid-cols-4 gap-4 w-[65rem]">
 			{productList.map((item) => {
 				return (
 					<Card
