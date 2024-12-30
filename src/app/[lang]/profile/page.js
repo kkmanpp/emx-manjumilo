@@ -1,4 +1,5 @@
 import { getDictionary } from "../dictionaries";
+import Image from "next/image";
 
 export default async function Profile({ params }) {
   //   const t = await getDictionary(lang);
@@ -34,19 +35,31 @@ export default async function Profile({ params }) {
           <div className="text-3xl font-semibold text-teal-700 mb-4">
             {sections.company_overview}
           </div>
-          <div className="space-y-2">
-            <p>
-              <strong>{name.key}:</strong> {name.value}
-            </p>
-            <p>
-              <strong>{established.key}:</strong> {established.value}
-            </p>
-            <p>
-              <strong>{core_business.key}:</strong> {core_business.value}
-            </p>
-            <p>
-              <strong>{product_type.key}:</strong> {product_type.value}
-            </p>
+          <div className="flex flex-col laptop:flex-row gap-6">
+            {/* Image */}
+            <div className="relative w-32 h-32 tablet:w-48 tablet:h-48 laptop:w-64 laptop:h-64 mobile:order-1 laptop:order-2 laptop:flex-1 flex justify-center">
+              <Image
+                src="/profile.jpg"
+                alt="Company Overview"
+                className="object-contain"
+                fill
+              />
+            </div>
+            {/* Content */}
+            <div className="mobile:order-2 laptop:order-1 laptop:flex-1 space-y-2">
+              <p>
+                <strong>{name.key}:</strong> {name.value}
+              </p>
+              <p>
+                <strong>{established.key}:</strong> {established.value}
+              </p>
+              <p>
+                <strong>{core_business.key}:</strong> {core_business.value}
+              </p>
+              <p>
+                <strong>{product_type.key}:</strong> {product_type.value}
+              </p>
+            </div>
           </div>
         </section>
         {/* Mission and Purpose */}
