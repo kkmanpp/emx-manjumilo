@@ -1,12 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Modal from "@/components/Modal";
+import dynamic from "next/dynamic";
+import Loader from "@/components/Loader";
 
 export default function ContactForm({ t }) {
   const contact = t.contact;
   const validation = t.validation;
   const { formFields, ourInfo } = contact;
   const modal = t.modal;
+
+  const MacauMap = dynamic(() => import("@/components/MacauMap"), {
+    ssr: false,
+    loading: () => <Loader />,
+  });
 
   const [formData, setFormData] = useState({
     name: "",
@@ -98,6 +105,7 @@ export default function ContactForm({ t }) {
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
           {contact.title}
         </h1>
+        {/* Contact form */}
         <div className="text-gray-600 mt-2">
           {contact.description.map((value, index) => (
             <div key={index}>{value}</div>
@@ -194,10 +202,11 @@ export default function ContactForm({ t }) {
           </button>
         </form>
       </div>
+      {/* Contact infomation */}
       <div className="bg-gray-50 p-6 sm:p-10 border-t border-gray-200">
         <h2 className="text-lg font-semibold text-gray-700">{ourInfo.title}</h2>
         <div className="text-gray-600 mt-2">
-          <strong>{ourInfo.email.key}:</strong>{" "}
+          <strong>{ourInfo.email.key}:</strong>&nbsp;
           <a
             href={`mailto:${ourInfo.email.value}`}
             className="text-gray-600 hover:underline"
@@ -206,17 +215,24 @@ export default function ContactForm({ t }) {
           </a>
         </div>
         <div className="text-gray-600 mt-1 flex">
-          <strong>{ourInfo.phone.key}:</strong>{" "}
+          <strong>{ourInfo.phone.key}:</strong> &nbsp;
           <div>
             {ourInfo.phone.value.map((value, index) => (
               <div key={index}>{value}</div>
             ))}
           </div>
         </div>
-        <div className="text-gray-600 mt-1">
-          <strong>{ourInfo.address.key}:</strong> {ourInfo.address.value}
+        <div className="text-gray-600 mt-1 flex whitespace-nowrap">
+          <strong>{ourInfo.address.key}:</strong> &nbsp;
+          <div>
+            {ourInfo.address.value.map((value, index) => (
+              <div key={index}>{value}</div>
+            ))}
+          </div>
         </div>
+        <MacauMap popupInfo={ourInfo} />
       </div>
+
       <Modal
         isVisible={modalState.isVisible}
         title={modalState.title}
