@@ -63,7 +63,7 @@ export default async function RootLayout({ children, params }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LoadingProvider>
-          <div className="grid grid-rows-[auto_auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50">
+          <div className="grid grid-rows-[auto_auto_auto_1fr_15rem] mobile:grid-rows-[auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50">
             <div className="w-full">
               <Image src={company} alt="company-img" height={500} />
             </div>
@@ -99,10 +99,10 @@ export default async function RootLayout({ children, params }) {
               </div>
             </div>
 
-            <main>
+            <main className="p-6">
               <Loader>{children}</Loader>
             </main>
-            <footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center mt-4">
+            <footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center mt-4 ">
               <div className="my-4">
                 <Image
                   src={bottomLogo}
