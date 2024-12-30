@@ -203,7 +203,7 @@ export default function ContactForm({ t }) {
         </form>
       </div>
       {/* Contact infomation */}
-      <div className="bg-gray-50 p-6 sm:p-10 border-t border-gray-200">
+      <div className="bg-gray-50 p-6 border-t border-gray-200">
         <h2 className="text-lg font-semibold text-gray-700">{ourInfo.title}</h2>
         <div className="text-gray-600 mt-2">
           <strong>{ourInfo.email.key}:</strong>&nbsp;
