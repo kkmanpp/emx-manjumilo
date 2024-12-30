@@ -21,6 +21,7 @@ export default async function Page({ params }) {
 					/>
 				);
 			})}
+			<div className="text-red-600 text-center pt-4 text-p5">{t.reminder}</div>
 		</div>
 	);
 }
