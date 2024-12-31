@@ -26,7 +26,7 @@ export default async function Profile({ params }) {
     beauty_and_skincare,
   } = product_overview;
   return (
-    <div className="smallTablet:px-6 tablet:px-9 largeTable:px-24 laptop:px:32 min-h-screen dark:text-gray-900">
+    <div className="smallTablet:px-6 tablet:px-9 largeTable:px-24 laptop:px-32 desktop:px-48 min-h-screen dark:text-gray-900">
       {/* Company Overview */}
       <main className="mx-auto p-6 bg-white shadow-lg mt-8 rounded-lg">
         <section>
