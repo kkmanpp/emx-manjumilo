@@ -6,7 +6,9 @@ export default function VideoPlayer({ videoId }) {
 			height={315}
 			src={`https://www.youtube.com/embed/${videoId}`}
 			className="rounded-xl"
-			title="event"
+			title="event-video"
+			allowFullScreen
+			loading="lazy"
 		></iframe>
 	);
 }
