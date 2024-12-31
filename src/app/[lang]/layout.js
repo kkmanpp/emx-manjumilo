@@ -63,7 +63,7 @@ export default async function RootLayout({ children, params }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LoadingProvider>
-          <div className="grid grid-rows-[auto_auto_auto_1fr_15rem] mobile:grid-rows-[auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50">
+          <div className="grid grid-rows-[auto_auto_1fr_auto] laptop:grid-rows-[auto_auto_auto_1fr_15rem]  items-center justify-items-center min-h-screen bg-Yellow-50">
             <div className="w-full">
               <Image
                 src={company}
@@ -73,7 +73,7 @@ export default async function RootLayout({ children, params }) {
               />
             </div>
 
-            <div className="mobile:hidden laptop:block  grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
+            <div className="hidden laptop:block  grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
               <div className="col-start-2 flex flex-row justify-end gap-x-8 px-6 mt-2 text-Grey-700 text-p5 font-medium">
                 {Object.keys(languages).map((key, index) => {
                   return (
@@ -87,12 +87,12 @@ export default async function RootLayout({ children, params }) {
 
             <div>
               <div className="flex flex-col justify-center items-center relative bottom-4">
-                <div className="mobile:hidden laptop:block w-full">
+                <div className="hidden laptop:block w-full">
                   <NavBar tabs={tabs} locale={lang} />
                 </div>
               </div>
 
-              <div className="mobile:block laptop:hidden w-full">
+              <div className="block laptop:hidden w-full">
                 <div className="fixed top-0 left-0 z-50 max-w-screen w-full">
                   <HamburgerMenu
                     tabs={tabs}

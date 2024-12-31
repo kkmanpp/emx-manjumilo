@@ -7,10 +7,13 @@ export default {
   ],
   theme: {
     screens: {
-      mobile: "0px",
+      smallMobile: "0px",
+      mobile: "480px",
+      smallTablet: "576px",
       tablet: "640px", // @media(min-width: 640px)
+      largeTablet: "768px",
       laptop: "1024px",
-      desktop: "1024px",
+      desktop: "1280px",
     },
     extend: {
       colors: {

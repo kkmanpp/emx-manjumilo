@@ -18,7 +18,7 @@ const MacauMap = ({ popupInfo }) => {
   });
 
   return (
-    <div className="relative w-full aspect-[16/9]">
+    <div className="relative z-0 w-full aspect-[16/9]">
       <MapContainer
         center={[22.191878945684888, 113.5405019516037]}
         zoom={17}
@@ -29,8 +29,9 @@ const MacauMap = ({ popupInfo }) => {
           attribution="&copy; OpenStreetMap contributors"
         />
         <Marker position={[22.191878945684888, 113.5405019516037]} icon={icon}>
-          <Popup>
+          <Popup className="hidden mobile:block">
             <div className="grid grid-cols-[auto_auto]">
+              {/* Image */}
               <div className="relative w-16 h-16 hidden tablet:block tablet:w-24 tablet:h-24 laptop:w-32 laptop:h-32 ">
                 <Image
                   src="/profile.jpg"
@@ -39,8 +40,10 @@ const MacauMap = ({ popupInfo }) => {
                   fill
                 />
               </div>
+              {/* Text Content */}
               <div>
-                <div className="mt-1 flex">
+                {/* Address */}
+                <div className="mt-1 hidden mobile:flex">
                   <div className="whitespace-nowrap font-bold ">
                     {address.key}: &nbsp;
                   </div>
@@ -53,6 +56,7 @@ const MacauMap = ({ popupInfo }) => {
                     ))}
                   </div>
                 </div>
+                {/* Contact */}
                 <div className="mt-1 hidden tablet:flex">
                   <div className="whitespace-nowrap font-bold ">
                     {phone.key}: &nbsp;
@@ -63,6 +67,7 @@ const MacauMap = ({ popupInfo }) => {
                     ))}
                   </div>
                 </div>
+                {/* Email */}
                 <div className="mt-1 hidden tablet:flex">
                   <div className="whitespace-nowrap font-bold ">
                     {email.key}:&nbsp;

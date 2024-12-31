@@ -2,8 +2,6 @@ import { getDictionary } from "../dictionaries";
 import Image from "next/image";
 
 export default async function Profile({ params }) {
-  //   const t = await getDictionary(lang);
-  //const { lang } = await params;
   const { lang } = await params;
   const t = await getDictionary(lang);
   const {
@@ -28,37 +26,37 @@ export default async function Profile({ params }) {
     beauty_and_skincare,
   } = product_overview;
   return (
-    <div className="tablet:px-24 laptop:px:32 min-h-screen dark:text-gray-900">
+    <div className="smallTablet:px-6 tablet:px-9 largeTable:px-24 laptop:px:32 min-h-screen dark:text-gray-900">
       {/* Company Overview */}
       <main className="mx-auto p-6 bg-white shadow-lg mt-8 rounded-lg">
         <section>
           <div className="text-3xl font-semibold text-teal-700 mb-4">
             {sections.company_overview}
           </div>
-          <div className="flex flex-col laptop:flex-row gap-6">
+          <div className="flex flex-col largeTablet:flex-row gap-6">
             {/* Image */}
-            <div className="relative w-32 h-32 tablet:w-48 tablet:h-48 laptop:w-64 laptop:h-64 mobile:order-1 laptop:order-2 laptop:flex-1 flex justify-center">
+            <div className="relative w-36 h-36 smallTablet:w-48 smallTablet:h-48 largeTablet:w-64 largeTablet:h-64 order-1 largeTablet:order-2 largeTablet:flex-1 flex justify-center">
               <Image
                 src="/profile.jpg"
                 alt="Company Overview"
-                className="object-contain"
+                className="absolute right-0 object-contain "
                 fill
               />
             </div>
             {/* Content */}
-            <div className="mobile:order-2 laptop:order-1 laptop:flex-1 space-y-2">
-              <p>
+            <div className="text-xl order-2 largeTablet:order-1 largeTablet:flex-1 space-y-2">
+              <div>
                 <strong>{name.key}:</strong> {name.value}
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>{established.key}:</strong> {established.value}
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>{core_business.key}:</strong> {core_business.value}
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>{product_type.key}:</strong> {product_type.value}
-              </p>
+              </div>
             </div>
           </div>
         </section>
