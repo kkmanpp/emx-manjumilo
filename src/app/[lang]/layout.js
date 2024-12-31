@@ -39,6 +39,16 @@ export const metadata = {
 		"manju",
 		"milo",
 	],
+	openGraph: {
+		images: [
+			{ url: "/opengraph-image.jpg", atl: "萬壽之露", width: 800, height: 400 },
+		],
+		title: "萬壽之露",
+		description: "來自長壽島沖繩的禮物， 帶給您新的生活習慣",
+		// url: "http://localhost:3001/cht", website url
+		type: "website",
+		siteName: "譽俊貿易-米潞健康一族 EMX-Manjumilo",
+	},
 };
 export async function generateStaticParams() {
 	return [{ lang: "cht" }, { lang: "chs" }];
