@@ -106,7 +106,7 @@ export default function ContactForm({ t }) {
           {contact.title}
         </h1>
         {/* Contact form */}
-        <div className="text-gray-600 mt-2 text-center">
+        <div className="text-gray-600 mt-2">
           {contact.description.map((value, index) => (
             <div key={index}>{value}</div>
           ))}
