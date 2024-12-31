@@ -2,6 +2,7 @@ import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import Image from "next/image";
+
 const MacauMap = ({ popupInfo }) => {
   const { address, phone, email } = popupInfo;
   const icon = new L.divIcon({
@@ -17,59 +18,68 @@ const MacauMap = ({ popupInfo }) => {
   });
 
   return (
-    <MapContainer
-      center={[22.191878945684888, 113.5405019516037]}
-      zoom={17}
-      style={{ width: "100%", height: "400px" }}
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&copy; OpenStreetMap contributors"
-      />
-      <Marker position={[22.191878945684888, 113.5405019516037]} icon={icon}>
-        <Popup>
-          <div className="grid grid-cols-[auto_auto]">
-            <div className="relative w-16 h-16 tablet:w-24 tablet:h-24 laptop:w-32 laptop:h-32 ">
-              <Image
-                src="/profile.jpg"
-                alt="Company Overview"
-                className="object-contain"
-                fill
-              />
+    <div className="relative w-full aspect-[16/9]">
+      <MapContainer
+        center={[22.191878945684888, 113.5405019516037]}
+        zoom={17}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; OpenStreetMap contributors"
+        />
+        <Marker position={[22.191878945684888, 113.5405019516037]} icon={icon}>
+          <Popup>
+            <div className="grid grid-cols-[auto_auto]">
+              <div className="relative w-16 h-16 hidden tablet:block tablet:w-24 tablet:h-24 laptop:w-32 laptop:h-32 ">
+                <Image
+                  src="/profile.jpg"
+                  alt="Company Overview"
+                  className="object-contain"
+                  fill
+                />
+              </div>
+              <div>
+                <div className="mt-1 flex">
+                  <div className="whitespace-nowrap font-bold ">
+                    {address.key}: &nbsp;
+                  </div>
+
+                  <div>
+                    {address.value.map((value, index) => (
+                      <div className="" key={index}>
+                        {value}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-1 hidden tablet:flex">
+                  <div className="whitespace-nowrap font-bold ">
+                    {phone.key}: &nbsp;
+                  </div>
+                  <div>
+                    {phone.value.map((value, index) => (
+                      <div key={index}>{value}</div>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-1 hidden tablet:flex">
+                  <div className="whitespace-nowrap font-bold ">
+                    {email.key}:&nbsp;
+                    <a
+                      href={`mailto:${email.value}`}
+                      className="hover:underline"
+                    >
+                      {email.value}
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="mt-1 flex">
-                <div className="whitespace-nowrap ">
-                  <strong>{address.key}:</strong>
-                </div>
-                &nbsp;
-                <div>
-                  {address.value.map((value, index) => (
-                    <div className="" key={index}>
-                      {value}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-1 flex">
-                <strong>{phone.key}:</strong> &nbsp;
-                <div>
-                  {phone.value.map((value, index) => (
-                    <div key={index}>{value}</div>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-2">
-                <strong>{email.key}:</strong>&nbsp;
-                <a href={`mailto:${email.value}`} className="hover:underline">
-                  {email.value}
-                </a>
-              </div>
-            </div>
-          </div>
-        </Popup>
-      </Marker>
-    </MapContainer>
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
   );
 };
 

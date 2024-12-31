@@ -104,7 +104,7 @@ export default async function RootLayout({ children, params }) {
               </div>
             </div>
 
-            <main className="p-6">
+            <main className="p-6 w-screen flex flex-col">
               <LoaderWrapper>{children}</LoaderWrapper>
             </main>
             <footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center mt-4 ">

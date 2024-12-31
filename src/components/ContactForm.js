@@ -203,10 +203,12 @@ export default function ContactForm({ t }) {
         </form>
       </div>
       {/* Contact infomation */}
-      <div className="bg-gray-50 p-4 tablet:p-6 laptop:p-10 border-t border-gray-200 max-w-full w-full overflow-x-hidden">
+      <div className="bg-gray-50 p-4 tablet:p-6 laptop:p-10">
         <h2 className="text-lg font-semibold text-gray-700">{ourInfo.title}</h2>
-        <div className="text-gray-600 mt-2">
-          <strong>{ourInfo.email.key}:</strong>&nbsp;
+        <div className="text-gray-600 mt-1 flex">
+          <div className="whitespace-nowrap font-bold">
+            {ourInfo.email.key}:&nbsp;
+          </div>
           <a
             href={`mailto:${ourInfo.email.value}`}
             className="text-gray-600 hover:underline"
@@ -215,15 +217,20 @@ export default function ContactForm({ t }) {
           </a>
         </div>
         <div className="text-gray-600 mt-1 flex">
-          <strong>{ourInfo.phone.key}:</strong> &nbsp;
+          <div className="whitespace-nowrap font-bold">
+            {ourInfo.phone.key}:&nbsp;
+          </div>
+
           <div>
             {ourInfo.phone.value.map((value, index) => (
               <div key={index}>{value}</div>
             ))}
           </div>
         </div>
-        <div className="text-gray-600 mt-1 flex whitespace-nowrap">
-          <strong>{ourInfo.address.key}:</strong> &nbsp;
+        <div className="text-gray-600 mt-1 flex ">
+          <div className="whitespace-nowrap font-bold">
+            {ourInfo.address.key}: &nbsp;
+          </div>
           <div>
             {ourInfo.address.value.map((value, index) => (
               <div key={index}>{value}</div>
