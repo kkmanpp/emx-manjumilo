@@ -28,7 +28,7 @@ const MacauMap = ({ popupInfo }) => {
       />
       <Marker position={[22.191878945684888, 113.5405019516037]} icon={icon}>
         <Popup>
-          <div className="items-center ">
+          <div className="grid grid-cols-[auto_auto]">
             <div className="relative w-16 h-16 tablet:w-24 tablet:h-24 laptop:w-32 laptop:h-32 ">
               <Image
                 src="/profile.jpg"
@@ -37,32 +37,34 @@ const MacauMap = ({ popupInfo }) => {
                 fill
               />
             </div>
-            <div className="mt-1 flex">
-              <div className="whitespace-nowrap ">
-                <strong>{address.key}:</strong>
+            <div>
+              <div className="mt-1 flex">
+                <div className="whitespace-nowrap ">
+                  <strong>{address.key}:</strong>
+                </div>
+                &nbsp;
+                <div>
+                  {address.value.map((value, index) => (
+                    <div className="" key={index}>
+                      {value}
+                    </div>
+                  ))}
+                </div>
               </div>
-              &nbsp;
-              <div>
-                {address.value.map((value, index) => (
-                  <div className="" key={index}>
-                    {value}
-                  </div>
-                ))}
+              <div className="mt-1 flex">
+                <strong>{phone.key}:</strong> &nbsp;
+                <div>
+                  {phone.value.map((value, index) => (
+                    <div key={index}>{value}</div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="mt-1 flex">
-              <strong>{phone.key}:</strong> &nbsp;
-              <div>
-                {phone.value.map((value, index) => (
-                  <div key={index}>{value}</div>
-                ))}
+              <div className="mt-2">
+                <strong>{email.key}:</strong>&nbsp;
+                <a href={`mailto:${email.value}`} className="hover:underline">
+                  {email.value}
+                </a>
               </div>
-            </div>
-            <div className="mt-2">
-              <strong>{email.key}:</strong>&nbsp;
-              <a href={`mailto:${email.value}`} className="hover:underline">
-                {email.value}
-              </a>
             </div>
           </div>
         </Popup>

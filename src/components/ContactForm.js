@@ -100,9 +100,9 @@ export default function ContactForm({ t }) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white shadow-md rounded-md overflow-hidden">
-      <div className="p-6 sm:p-10">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
+    <div className="mobile:max-w-full tablet:max-w-3xl w-full mx-auto bg-white shadow-md rounded-md overflow-hidden">
+      <div className="p-4 tablet:p-6 laptop:p-10">
+        <h1 className="text-xl tablet:text-2xl laptop:text-3xl font-bold text-gray-800 text-center">
           {contact.title}
         </h1>
         {/* Contact form */}
@@ -203,7 +203,7 @@ export default function ContactForm({ t }) {
         </form>
       </div>
       {/* Contact infomation */}
-      <div className="bg-gray-50 p-6 border-t border-gray-200">
+      <div className="bg-gray-50 p-4 tablet:p-6 laptop:p-10 border-t border-gray-200 max-w-full w-full overflow-x-hidden">
         <h2 className="text-lg font-semibold text-gray-700">{ourInfo.title}</h2>
         <div className="text-gray-600 mt-2">
           <strong>{ourInfo.email.key}:</strong>&nbsp;
