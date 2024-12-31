@@ -28,7 +28,7 @@ export default async function Profile({ params }) {
   return (
     <div className="smallTablet:px-6 tablet:px-9 largeTable:px-24 laptop:px-32 desktop:px-48 min-h-screen dark:text-gray-900">
       {/* Company Overview */}
-      <main className="mx-auto p-6 bg-white shadow-lg mt-8 rounded-lg">
+      <main className="mx-auto p-6 bg-white shadow-lg rounded-lg">
         <section>
           <div className="text-3xl font-semibold text-teal-700 mb-4">
             {sections.company_overview}

@@ -6,7 +6,7 @@ export default function LoaderWrapper({ children }) {
   return (
     <>
       {isLoading && <Loader />}
-      <div style={{ display: isLoading ? "none" : "block" }}>{children}</div>
+      <div className={isLoading ? "hidden" : "block"}>{children}</div>
     </>
   );
 }
