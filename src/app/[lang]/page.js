@@ -9,7 +9,7 @@ export default async function Home({ params }) {
   let productList;
   let error = "";
 
-  await fetch("http://localhost:3001/api/best-selling-products")
+  await fetch(`${process.env.BASEURL}/api/best-selling-products`)
     .then((response) => response.json())
     .then((data) => (productList = data.data))
     .catch((err) => (error = "Failed to get data"));

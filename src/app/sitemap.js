@@ -2,7 +2,7 @@ export default async function sitemap() {
   const baseUrl = "https://www.example.com";
   const tabs = ["profile", "contact", "feedback", "knowledge", "safeguard"];
 
-  const allProducts = await fetch("http://localhost:3000/api/all-products/", {
+  const allProducts = await fetch(`${process.env.BASEURL}/api/all-products/`, {
     method: "GET",
   }).then((res) => res.json());
 
