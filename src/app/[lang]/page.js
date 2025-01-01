@@ -13,7 +13,7 @@ export default async function Home({ params }) {
       <div className="mx-2 my-4 font-bold dark:text-Grey-900 text-p1">
         {t.homepage.popularProduct}
       </div>
-      <TrendingProductViewer lang={lang} />
+      <TrendingProductViewer lang={lang} dictionary={t} />
       <div className="grid grid-cols-2 gap-x-8 mt-8 mx-2">
         <div className="bg-white">
           <div className="border-l-4 border-l-Green-600 m-2">

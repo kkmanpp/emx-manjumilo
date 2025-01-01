@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Card from "@/components/Card";
 import { useLoading } from "@/context/LoadingContext";
 
-export default function TrendingProductViewer({ lang }) {
+export default function TrendingProductViewer({ lang, dictionary }) {
   const [productList, setProductList] = useState(null);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -43,6 +43,7 @@ export default function TrendingProductViewer({ lang }) {
             title={item.name[lang]}
             image={item.image[0]}
             primaryDesc={item.ad_slogan[lang]}
+            label={dictionary.homepage.more}
             onClick={() => router.push(`/products/${item.sku}`)}
           />
         );
