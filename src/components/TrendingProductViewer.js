@@ -1,30 +1,32 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Card from "@/components/Card";
-import { useLoading } from "@/context/LoadingContext";
 
-export default function TrendingProductViewer({ lang, dictionary }) {
-  const [productList, setProductList] = useState(null);
-  const [error, setError] = useState("");
-  const router = useRouter();
-  const { startLoading, stopLoading } = useLoading();
+export default async function TrendingProductViewer({
+  lang,
+  dictionary,
+  productList,
+  error,
+}) {
+  // const productList = data.json().data;
 
-  useEffect(() => {
-    async function fetchAllTrendingProducts() {
-      setError("");
-      setProductList(null);
-      startLoading();
+  // const [productList, setProductList] = useState(null);
+  // const [error, setError] = useState("");
+  // const router = useRouter();
+  // const { startLoading, stopLoading } = useLoading();
 
-      await fetch("api/best-selling-products")
-        .then((response) => response.json())
-        .then((data) => setProductList(data.data))
-        .catch((err) => setError("Failed to get data"))
-        .finally(() => stopLoading());
-    }
-    fetchAllTrendingProducts();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchAllTrendingProducts() {
+  //     setError("");
+  //     setProductList(null);
+  //     startLoading();
+
+  //     await fetch("api/best-selling-products")
+  //       .then((response) => response.json())
+  //       .then((data) => setProductList(data.data))
+  //       .catch((err) => setError("Failed to get data"))
+  //       .finally(() => stopLoading());
+  //   }
+  //   fetchAllTrendingProducts();
+  // }, []);
 
   if (!productList) return;
   if (error)
@@ -44,7 +46,7 @@ export default function TrendingProductViewer({ lang, dictionary }) {
             image={item.image[0]}
             primaryDesc={item.ad_slogan[lang]}
             label={dictionary.homepage.more}
-            onClick={() => router.push(`/products/${item.sku}`)}
+            path={`/products/${item.sku}`}
           />
         );
       })}

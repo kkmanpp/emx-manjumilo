@@ -6,8 +6,14 @@ export default function ProductOverviewCard({ lang, product, onClick }) {
       className="rounded-xl p-4 shadow-md overflow-hidden flex flex-col bg-white items-center cursor-pointer"
       onClick={onClick}
     >
-      <div className="h-[25rem] flex flex-col justify-center items-cener">
-        <Image src={product.image[0]} alt="product" height={200} width={200} />
+      <div className="flex flex-col justify-center items-cener">
+        <Image
+          src={product.image[0]}
+          alt="product"
+          height={200}
+          width={200}
+          className=" object-contain h-[18rem]"
+        />
       </div>
       <div>
         <div className="font-bold text-center">{product.name[lang]}</div>
