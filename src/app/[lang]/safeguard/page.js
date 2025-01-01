@@ -13,7 +13,7 @@ export default async function Page({ params }) {
   const t = await getDictionary(lang);
   const SAFEGUARD_LIST = t.safeguard;
   return (
-    <div className="flex flex-col gap-4 w-full max-w-screen-lg mx-auto px-4">
+    <div className="flex flex-col gap-4 w-full max-w-screen-lg mx-auto px-4 my-4">
       <KnowledgeCard title={SAFEGUARD_LIST.card1.title}>
         <div className="grid grid-cols-[1fr_3fr] gap-4 mx-2">
           <div className="col-start-1 col-span-2 flex flex-col justify-center items-center text-Grey-700">
