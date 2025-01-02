@@ -1,4 +1,4 @@
-import FeedbackViewer from "@/components/FeedbackViewer";
+import FeedbackViewer from "./components/FeedbackViewer";
 import { getDictionary } from "../dictionaries";
 
 export default async function Page({ params }) {

@@ -1,4 +1,4 @@
-import ContactForm from "../../../components/ContactForm";
+import ContactForm from "./components/ContactForm";
 import { getDictionary } from "../dictionaries";
 
 export default async function Contact({ params }) {

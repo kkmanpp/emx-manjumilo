@@ -1,4 +1,4 @@
-import ProductViewer from "@/components/ProductViewer";
+import ProductViewer from "./components/ProductViewer";
 import { getDictionary } from "../dictionaries";
 
 export default async function Page({ params }) {
