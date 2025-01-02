@@ -1,5 +1,6 @@
 export default async function sitemap() {
-  const baseUrl = "https://www.example.com";
+  const baseUrl = process.env.BASEURL || "http://localhost:3000";
+  console.log(baseUrl);
   const tabs = ["profile", "contact", "feedback", "knowledge", "safeguard"];
 
   const allProducts = await fetch(`${process.env.BASEURL}/api/all-products/`, {
