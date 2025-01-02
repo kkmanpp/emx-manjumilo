@@ -1,4 +1,4 @@
-import KnowledgeCard from "@/components/KnowledgeCard";
+import KnowledgeCard from "@/app/[lang]/knowledge/components/KnowledgeCard";
 import { getDictionary } from "../dictionaries";
 import Image from "next/image";
 import flowChart from "../../../../public/flow-chart.png";

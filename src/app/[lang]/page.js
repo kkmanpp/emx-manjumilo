@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getDictionary } from "./dictionaries";
-import TrendingProductViewer from "@/components/TrendingProductViewer";
+import TrendingProductViewer from "./products/components/TrendingProductViewer";
 import VideoPlayer from "@/components/VideoPlayer";
 
 export default async function Home({ params }) {

@@ -1,5 +1,5 @@
 import { getDictionary } from "../../dictionaries";
-import ProductDetailViewer from "@/components/ProductDetailViewer";
+import ProductDetailViewer from "./components/ProductDetailViewer";
 
 export async function generateMetadata({ params }) {
   const sku = (await params).sku;

@@ -1,4 +1,4 @@
-import KnowledgeCard from "@/components/KnowledgeCard";
+import KnowledgeCard from "@/app/[lang]/knowledge/components/KnowledgeCard";
 import { getDictionary } from "../dictionaries";
 import Image from "next/image";
 import drink from "../../../../public/safeguard_drink.png";
