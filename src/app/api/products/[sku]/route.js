@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import products from "@/products.json";
 
 export async function GET(req, { params }) {
-  console.log("hahaha");
   const { sku } = await params;
   const product = products.filter((item) => item.sku === sku);
 
