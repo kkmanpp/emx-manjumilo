@@ -5,10 +5,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, feedback } = req.body;
 
   // Validate required fields
-  if (!name || !message) {
+  if (!name || !feedback) {
     return res.status(400).json({ message: "Name and message are required" });
   }
 
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
       from: `"${name}" <${email || "no-reply@example.com"}>`, // sender address
       to: process.env.RECEIVER_EMAIL, // list of receivers
       subject: `New Contact Form Submission from ${name}`,
-      text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+      text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nFeedback: ${feedback}`,
     });
 
     res.status(200).json({ message: "Email sent successfully" });

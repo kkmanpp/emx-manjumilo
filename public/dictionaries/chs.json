@@ -111,7 +111,6 @@
       "customer": "日本冲绳县 金城也一 41岁 饮用时间4年",
       "review": "万寿之露的功力一定要喝了以后才会真正体会到。万寿之露是医生推荐了以后我才知道的。身体感到变化是在喝了一个月以后才发现的。 首先是每天早上醒来以后觉得整个人都整人个人都神清气爽了。其后，实际上也有一段时间没有再坚持饮用万寿之露，身体又开始变得极易疲劳，这时又让我想起了万寿之露。从此以后，我每天早、晚各饮用10ml的万寿之露原液。我的爱好是慢跑，喝了万寿之露以后，第二天可以完全没有前一天留下的疲乏而投入工作，身体完全没有了倦怠的感觉，以前一直让我烦恼的腰痛也逐渐好了很多。看到我精神百倍的样子，很多同事、朋友都开始学我，喝起了万寿之露，如果哪一位对万寿之露感兴趣，我劝您一定要喝上一个月再说。像我这样，睡觉好了，身体不再容易疲惫，喝了一个月以后您再慢慢体会一下，您自己的身体一定会有感觉的，您可以来试一试。 "
     },
-
     "review5": {
       "customer": "福冈县  男性  73岁   每日15ml",
       "review": "饮用万寿之露一年，每天吃得好排得畅，很舒服。我会继续饮用万寿之露。 "
@@ -270,24 +269,26 @@
       "我们会积极尊重您的意见－您的建议是我们宝贵的资产！",
       "来信请注明姓名或机构、联系电邮、 电话，我们会尽快回覆您,谢谢！"
     ],
-    "name": {
-      "key": "姓名或机构",
-      "placeholder": ""
+    "formFields": {
+      "name": {
+        "key": "姓名或机构",
+        "placeholder": ""
+      },
+      "phone": {
+        "key": "联络电话",
+        "placeholder": ""
+      },
+      "email": {
+        "key": "电邮地址",
+        "placeholder": ""
+      },
+      "feedback": {
+        "key": "您的意见",
+        "placeholder": ""
+      },
+      "submit": "送出"
     },
-    "phone": {
-      "key": "联络电话",
-      "placeholder": ""
-    },
-    "email": {
-      "key": "电邮地址",
-      "placeholder": ""
-    },
-    "message": {
-      "key": "您的意见",
-      "placeholder": ""
-    },
-    "submit": "送出",
-    "ourinfo": {
+    "ourInfo": {
       "title": "联络资讯",
       "phone": {
         "key": "电话",
@@ -299,8 +300,52 @@
       },
       "address": {
         "key": "地址",
-        "value": "澳门苏亚利斯博士大马路25号互助会大厦六楼602室"
+        "value": [
+          "澳门苏亚利斯博士大马路25号互助会大厦六楼602室",
+          "602, 25 Av. Dr. Mário Soares, Macao"
+        ]
       }
     }
+  },
+  "product": {
+    "size": "产品大小",
+    "description": "产品描述",
+    "nutrition": "营养成分",
+    "directions": "建议用法",
+    "reminder": "注意事项",
+    "ingredients": "产品说明",
+    "suitable_for": "适合人士",
+    "advisory_info": "贮存方法"
+  },
+  "validation": {
+    "nameRequired": "请输入名字",
+    "phoneOrEmailRequired": "请输入电话号码或邮件",
+    "emailOrPhoneRequired": "请输入邮件或电话号码",
+    "feedbackRequired": "请输入您的意见",
+    "invalidEmail": "请输入有效的电子邮件地址",
+    "invalidPhone": "请输入有效的电话号码"
+  },
+  "modal": {
+    "title": {
+      "submissionSuccessful": "提交成功",
+      "submissionFailed": "提交失败"
+    },
+    "message": {
+      "feedbackSent": "您的宝贵意见已成功发送，我们会尽快回覆您，谢谢！",
+      "failedToSendFeedback": "很抱歉，我们无法成功发送您的意见。请检查您的网络连线，或稍后再试一次。我们对此造成的不便深感抱歉。",
+      "errorOccurred": "很抱歉，发生了一些错误。请稍后再试，感谢您的耐心与理解。"
+    },
+    "buttonLabel": {
+      "close": "关闭",
+      "ok": "确定"
+    }
+  },
+  "reminder": "所有饮用者心得，视乎饮用者的实际情况，身质而定，每个用者是不同的，仅供上述报告参考。",
+  "homepage": {
+    "eventVideo": "活动影片",
+    "ourPartner": "合作伙伴",
+    "promotion": "推广优惠",
+    "popularProduct": "热销产品",
+    "more": "更多"
   }
 }
