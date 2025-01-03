@@ -1,11 +1,10 @@
+import { getProductsFromJson } from "@/lib/products";
 export default async function sitemap() {
   const baseUrl = process.env.BASEURL || "http://localhost:3000";
   console.log(baseUrl);
   const tabs = ["profile", "contact", "feedback", "knowledge", "safeguard"];
 
-  const allProducts = await fetch(`${process.env.BASEURL}/api/all-products/`, {
-    method: "GET",
-  }).then((res) => res.json());
+  const allProducts = getProductsFromJson();
 
   const pages = [
     {
@@ -32,7 +31,7 @@ export default async function sitemap() {
     };
     pages.push(page);
   });
-  let products = allProducts.products.map((item) => {
+  let products = allProducts.map((item) => {
     return {
       url: `${baseUrl}/products/${item.sku}`,
       lastModified: new Date(),

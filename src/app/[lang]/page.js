@@ -2,19 +2,12 @@ import Image from "next/image";
 import { getDictionary } from "./dictionaries";
 import TrendingProductViewer from "./products/components/TrendingProductViewer";
 import VideoPlayer from "@/components/VideoPlayer";
+import { getTrendingProductsFromJson } from "@/lib/products";
 
 export default async function Home({ params }) {
   const { lang } = await params;
   const t = await getDictionary(lang);
-  let productList;
-  let error = "";
-
-  await fetch(`${process.env.BASEURL}/api/best-selling-products`)
-    .then((response) => response.json())
-    .then((data) => (productList = data.data))
-    .catch((err) => (error = "Failed to get data"));
-
-  console.log(productList);
+  const productList = getTrendingProductsFromJson();
 
   return (
     <div className="w-[65rem]">
@@ -25,7 +18,6 @@ export default async function Home({ params }) {
         lang={lang}
         dictionary={t}
         productList={productList}
-        error={error}
       />
       <div className="grid grid-cols-2 gap-x-8 mt-8 mx-2">
         <div className="bg-white">
