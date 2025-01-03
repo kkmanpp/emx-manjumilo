@@ -86,7 +86,7 @@ export default async function RootLayout({ children, params }) {
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				<LoadingProvider>
-					<div className="grid grid-rows-[auto_auto_1fr_auto] laptop:grid-rows-[auto_auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50">
+					<div className="grid grid-rows-[auto_auto_1fr_auto] laptop:grid-rows-[auto_auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50 overflow-auto">
 						<div className="w-full">
 							<Image
 								src={company}
@@ -127,7 +127,7 @@ export default async function RootLayout({ children, params }) {
 							</div>
 						</div>
 
-						<main className="p-6 w-screen flex flex-col mobile:px-0 pt-0">
+						<main className="p-6 w-full flex flex-col justify-center items-center mobile:px-0 pt-0">
 							<LoaderWrapper>{children}</LoaderWrapper>
 						</main>
 						<footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center ">
@@ -141,7 +141,7 @@ export default async function RootLayout({ children, params }) {
 								/>
 							</div>
 
-							<div className="text-Grey-500">
+							<div className="text-Grey-500 text-center">
 								Copyright © 2013 Milo company, All Rights Reserved ®
 							</div>
 							<div className="cursor-pointer py-2">

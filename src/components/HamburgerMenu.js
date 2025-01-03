@@ -42,7 +42,7 @@ export default function HamburgerMenu({
 				}`}
 			>
 				{/* Menu Options */}
-				<div className="absolute top-[4rem] right-0 w-full mobile:overflow-auto">
+				<div className="absolute top-[4rem] right-0 w-full h-full mobile:overflow-auto">
 					<ul className="list-none">
 						{tabs.map((tab, index) => (
 							<li key={index} className="border-b border-Grey-800">

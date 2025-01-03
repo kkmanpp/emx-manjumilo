@@ -22,7 +22,7 @@ export default async function Page({ params }) {
 	).then((res) => res.json());
 
 	return (
-		<div className="w-[40rem] mobile:w-full">
+		<div className="w-[40rem] mobile:w-full flex flex-col justify-center items-center">
 			<ProductDetailViewer t={t} lang={lang} product={product.product[0]} />
 		</div>
 	);
