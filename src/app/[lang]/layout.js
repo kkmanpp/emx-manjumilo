@@ -96,7 +96,7 @@ export default async function RootLayout({ children, params }) {
 							/>
 						</div>
 
-						<div className="hidden laptop:block grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
+						<div className="mobile:hidden grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
 							<div className="col-start-2 flex flex-row justify-end gap-x-8 px-6 mt-2 text-Grey-700 text-p5 font-medium">
 								{Object.keys(languages).map((key, index) => {
 									return (
@@ -127,7 +127,7 @@ export default async function RootLayout({ children, params }) {
 							</div>
 						</div>
 
-						<main className="p-6 w-full flex flex-col justify-center items-center mobile:px-0 pt-0">
+						<main className="p-6 w-screen flex flex-col justify-center items-center mobile:px-0 pt-0">
 							<LoaderWrapper>{children}</LoaderWrapper>
 						</main>
 						<footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center ">
