@@ -1,55 +1,55 @@
 import Card from "@/components/Card";
 
 export default async function TrendingProductViewer({
-	lang,
-	dictionary,
-	productList,
-	error,
+  lang,
+  dictionary,
+  productList,
+  error,
 }) {
-	// const productList = data.json().data;
+  // const productList = data.json().data;
 
-	// const [productList, setProductList] = useState(null);
-	// const [error, setError] = useState("");
-	// const router = useRouter();
-	// const { startLoading, stopLoading } = useLoading();
+  // const [productList, setProductList] = useState(null);
+  // const [error, setError] = useState("");
+  // const router = useRouter();
+  // const { startLoading, stopLoading } = useLoading();
 
-	// useEffect(() => {
-	//   async function fetchAllTrendingProducts() {
-	//     setError("");
-	//     setProductList(null);
-	//     startLoading();
+  // useEffect(() => {
+  //   async function fetchAllTrendingProducts() {
+  //     setError("");
+  //     setProductList(null);
+  //     startLoading();
 
-	//     await fetch("api/best-selling-products")
-	//       .then((response) => response.json())
-	//       .then((data) => setProductList(data.data))
-	//       .catch((err) => setError("Failed to get data"))
-	//       .finally(() => stopLoading());
-	//   }
-	//   fetchAllTrendingProducts();
-	// }, []);
+  //     await fetch("api/best-selling-products")
+  //       .then((response) => response.json())
+  //       .then((data) => setProductList(data.data))
+  //       .catch((err) => setError("Failed to get data"))
+  //       .finally(() => stopLoading());
+  //   }
+  //   fetchAllTrendingProducts();
+  // }, []);
 
-	if (!productList) return;
-	if (error)
-		return (
-			<div className="text-red-600 flex flex-col items-center justify-center">
-				{error}
-			</div>
-		);
+  if (!productList) return;
+  if (error)
+    return (
+      <div className="text-red-600 flex flex-col items-center justify-center">
+        {error}
+      </div>
+    );
 
-	return (
-		<div className="grid grid-cols-4 gap-4 w-[65rem] mobile:grid-cols-1 mobile:w-full">
-			{productList.map((item) => {
-				return (
-					<Card
-						key={item.sku}
-						title={item.name[lang]}
-						image={item.image[0]}
-						primaryDesc={item.ad_slogan[lang]}
-						label={dictionary.homepage.more}
-						path={`/products/${item.sku}`}
-					/>
-				);
-			})}
-		</div>
-	);
+  return (
+    <div className="grid grid-cols-1 w-full tablet:grid-cols-2 gap-4 tablet:px-2 laptop:grid-cols-4">
+      {productList.map((item) => {
+        return (
+          <Card
+            key={item.sku}
+            title={item.name[lang]}
+            image={item.image[0]}
+            primaryDesc={item.ad_slogan[lang]}
+            label={dictionary.homepage.more}
+            path={`/products/${item.sku}`}
+          />
+        );
+      })}
+    </div>
+  );
 }
