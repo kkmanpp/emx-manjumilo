@@ -5,7 +5,7 @@ export default function ProductDetailCard({ lang, product, dictionary }) {
 	const t = dictionary.product;
 	console.log("product:", product);
 	return (
-		<div className="grid grid-rows-[auto_auto] gap-4 bg-white rounded-2xl shadow-lg p-4 dark:text-Grey-900">
+		<div className="grid grid-rows-[auto_auto] gap-4 bg-white rounded-2xl shadow-lg p-4 dark:text-Grey-900 mobile:rounded-none">
 			<div className="grid grid-cols-2 gap-x-4">
 				<div
 					className={`grid grid-flow-row gap-2 items-align ${
