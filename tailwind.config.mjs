@@ -15,9 +15,10 @@ export default {
       // laptop: "1024px",
       // desktop: "1280px",
       mobile: "0px",
-      tablet: "481px",
-      laptop: "769px",
-      desktop: "1025px",
+      largeMobile: "480px",
+      tablet: "768px",
+      laptop: "1024px",
+      desktop: "1280px",
 
       //   desktop: "1280px",
       //   laptop: { raw: "(max-width:1279px)" },
