@@ -10,7 +10,7 @@ export default async function Home({ params }) {
   const productList = getTrendingProductsFromJson();
 
   return (
-    <div className="w-[65rem] w-full">
+    <div className="largeMobile:px-4 w-full  laptop:w-[65rem]">
       <div className="mx-2 my-4 font-bold dark:text-Grey-900 text-p1">
         {t.homepage.popularProduct}
       </div>
@@ -19,26 +19,27 @@ export default async function Home({ params }) {
         dictionary={t}
         productList={productList}
       />
-      <div className="grid grid-cols-2 gap-x-8 mt-8 mx-2 tablet:grid-cols-1 w-full mx-0">
+      <div className="grid tablet:grid-cols-2 gap-y-4 tablet:gap-x-4 mt-8 grid-cols-1 w-full mx-0">
         <div className="bg-white">
           <div className="border-l-4 border-l-Green-600 m-2">
             <div className="px-4 font-semibold">{t.homepage.eventVideo}</div>
           </div>
-          <div className="m-4 flex flex-col justify-center items-center">
+          <div className="m-4 flex flex-col justify-self-center items-center tablet:pt-[3rem] laptop:pt-0">
             <VideoPlayer videoId="5XDNHx2MQ40" />
           </div>
         </div>
         <div className="grid grid-rows-[11rem_auto] gap-4">
-          <div className="bg-white tablet:mt-4">
+          <div className="bg-white">
             <div className="border-l-4 border-l-Green-600 m-2">
               <div className="px-4 font-semibold">{t.homepage.ourPartner}</div>
             </div>
-            <div className="m-2">
+            <div className="m-4 pt-2 largeMobile:p-0 largeMobile:flex largeMobile:flex-col largeMobile:items-center">
               <Image
                 src="/partner.gif"
                 alt="our-partner"
                 width={500}
                 height={300}
+                className="object-contain w-auto largeMobile:w-[28rem]"
               />
             </div>
           </div>
@@ -46,13 +47,13 @@ export default async function Home({ params }) {
             <div className="border-l-4 border-l-Green-600 m-2">
               <div className="px-4 font-semibold">{t.homepage.promotion}</div>
             </div>
-            <div className="m-4">
+            <div className="m-4 largeMobile:flex largeMobile:flex-col largeMobile:items-center">
               <Image
                 src="/delta.jpeg"
                 alt="promotion"
                 width={500}
                 height={300}
-                className="object-contain w-[30rem] h-[10rem]"
+                className="object-contain w-auto laptop:w-[19rem]"
               />
             </div>
           </div>
