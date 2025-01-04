@@ -96,12 +96,18 @@ export default async function RootLayout({ children, params }) {
               />
             </div>
 
-            <div className="hidden laptop:block grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
+            <div className="hidden laptop:grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
               <div className="col-start-2 flex flex-row justify-end gap-x-8 px-6 mt-2 text-Grey-700 text-p5 font-medium">
                 {Object.keys(languages).map((key, index) => {
                   return (
                     <div key={key}>
-                      <LocaleSwitcher locale={languages[key]} code={key} />
+                      <LocaleSwitcher
+                        locale={languages[key]}
+                        code={key}
+                        style={
+                          lang === key ? "border-b-2 border-b-Green-700" : ""
+                        }
+                      />
                     </div>
                   );
                 })}
