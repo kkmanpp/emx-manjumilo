@@ -29,7 +29,7 @@ const MacauMap = ({ popupInfo }) => {
           attribution="&copy; OpenStreetMap contributors"
         />
         <Marker position={[22.191878945684888, 113.5405019516037]} icon={icon}>
-          <Popup className="hidden mobile:block">
+          <Popup className="hidden largeMobile:block">
             <div className="grid grid-cols-[auto_auto]">
               {/* Image */}
               <div className="relative w-16 h-16 hidden tablet:block tablet:w-24 tablet:h-24  ">
@@ -43,7 +43,7 @@ const MacauMap = ({ popupInfo }) => {
               {/* Text Content */}
               <div>
                 {/* Address */}
-                <div className="mt-1 hidden mobile:flex">
+                <div className="mt-1 hidden largeMobile:flex">
                   <div className="whitespace-nowrap font-bold ">
                     {address.key}: &nbsp;
                   </div>
