@@ -46,7 +46,6 @@ export default function HamburgerMenu({
       >
         {/* Menu Options */}
         <div className="absolute top-[4rem] right-0 w-full h-full mobile:overflow-auto">
-          {pathname}
           <ul className="list-none">
             {tabs.map((tab, index) => (
               <li
