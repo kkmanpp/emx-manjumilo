@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LocaleSwitcher from "./LocaleSwitcher";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function HamburgerMenu({
   tabs,
@@ -11,9 +12,9 @@ export default function HamburgerMenu({
   languages,
   locale,
 }) {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <div className="relative">
@@ -45,19 +46,20 @@ export default function HamburgerMenu({
       >
         {/* Menu Options */}
         <div className="absolute top-[4rem] right-0 w-full h-full mobile:overflow-auto">
+          {pathname}
           <ul className="list-none">
             {tabs.map((tab, index) => (
               <li
                 key={index}
                 className={`${
-                  activeTab === index && "bg-Green-500 rounded-xl w-[50%]"
+                  pathname === `/${locale}${tab.path}` &&
+                  "bg-Green-500 rounded-xl w-[50%]"
                 }`}
               >
                 <Link
                   href={`/${locale}${tab.path}`}
                   className="block text-white px-4 py-3 hover:text-Grey-300"
                   onClick={() => {
-                    setActiveTab(index);
                     setMenuOpen(false);
                   }}
                 >
