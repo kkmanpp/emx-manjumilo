@@ -100,7 +100,7 @@ export default function ContactForm({ t }) {
   };
 
   return (
-    <div className="p-4 max-w-full tablet:max-w-3xl w-full mx-auto bg-white shadow-md rounded-md ">
+    <div className="p-4 w-full max-w-full mx-auto bg-white shadow-md rounded-md tablet:max-w-3xl laptop:w-[65rem]  ">
       <div className="p-4 tablet:p-6 laptop:p-10">
         <h1 className="text-xl tablet:text-2xl laptop:text-3xl font-bold text-gray-800 text-center">
           {contact.title}

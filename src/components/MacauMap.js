@@ -7,8 +7,8 @@ const MacauMap = ({ popupInfo }) => {
   const { address, phone, email } = popupInfo;
   const icon = new L.divIcon({
     html: `
-    <div class="w-6 h-6 tablet:w-10 tablet:h-10 bg-white border-2 border-green-600  shadow-xl flex items-center justify-center">
-    <img src="/Milo-logo.png" class="w-5 h-5 tablet:w-8 tablet:h-8" alt="Milo Logo" />
+    <div class="shadow-xl flex items-center justify-center bg-white border-green-600 w-6 h-6 border-2 tablet:w-8 tablet:h-8 laptop:w-10 laptop:h-10  ">
+    <img src="/Milo-logo.png" class="w-4 h-4 tablet:w-6 tablet:h-6 laptop:w-8 laptop:h-8" alt="Milo Logo" />
   </div>
   `,
     className: "",
@@ -18,7 +18,7 @@ const MacauMap = ({ popupInfo }) => {
   });
 
   return (
-    <div className="relative z-0 w-full aspect-[16/9]">
+    <div className="relative z-0 w-full aspect-square laptop:aspect-video">
       <MapContainer
         center={[22.191878945684888, 113.5405019516037]}
         zoom={17}

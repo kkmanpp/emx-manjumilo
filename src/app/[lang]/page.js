@@ -24,8 +24,8 @@ export default async function Home({ params }) {
           <div className="border-l-4 border-l-Green-600 m-2">
             <div className="px-4 font-semibold">{t.homepage.eventVideo}</div>
           </div>
-          <div className="m-4 flex flex-col justify-self-center items-center tablet:pt-[3rem] laptop:pt-0">
-            <VideoPlayer videoId="5XDNHx2MQ40" />
+          <div className="m-4 flex flex-col justify-center items-center ">
+            <VideoPlayer videoUrl={process.env.VIDEO_URL} />
           </div>
         </div>
         <div className="grid grid-rows-[11rem_auto] gap-4">
