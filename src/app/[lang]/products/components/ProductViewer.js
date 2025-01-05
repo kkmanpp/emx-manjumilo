@@ -8,9 +8,9 @@ export default function ProductViewer({ productList, lang, dictionary }) {
   const handleOnClick = (sku) => {
     router.push(`/products/${sku}`);
   };
-
+  // largeMobile:my-4 largeMobile:w-[30rem] tablet:w-[35rem]
   return (
-    <div className="laptop:w-[45rem] grid grid-cols-2 gap-4 grid-flow-row">
+    <div className="largeMobile:w-auto tablet:px-4 laptop:px-8 grid largeMobile:grid-cols-2 largeMobile:gap-4 grid-flow-row w-full grid-cols-1 gap-2">
       {productList.map((product) => (
         <ProductOverviewCard
           key={product.sku}

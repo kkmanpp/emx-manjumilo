@@ -22,7 +22,7 @@ export default async function Page({ params }) {
   const product = getProductBySkuFromJson(sku);
 
   return (
-    <div className="laptop:w-[40rem]">
+    <div className="w-full laptop:w-[40rem] flex flex-col justify-center items-center">
       <ProductDetailViewer t={t} lang={lang} product={product} />
     </div>
   );

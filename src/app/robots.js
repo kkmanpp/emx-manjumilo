@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    // sitemap: "https:///sitemap.xml",
+    sitemap: `${process.env.BASEURL}/sitemap.xml`,
   };
 }

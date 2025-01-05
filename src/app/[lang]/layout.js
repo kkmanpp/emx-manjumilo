@@ -86,7 +86,7 @@ export default async function RootLayout({ children, params }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LoadingProvider>
-          <div className="grid grid-rows-[auto_auto_1fr_auto] laptop:grid-rows-[auto_auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50">
+          <div className="grid grid-rows-[auto_auto_1fr_auto] laptop:grid-rows-[auto_auto_auto_1fr_auto] items-center justify-items-center min-h-screen bg-Yellow-50 overflow-auto">
             <div className="w-full">
               <Image
                 src={company}
@@ -96,12 +96,18 @@ export default async function RootLayout({ children, params }) {
               />
             </div>
 
-            <div className="hidden laptop:block grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
+            <div className="hidden laptop:grid grid-cols-2 gap-x-4 w-full absolute top-0 right-0">
               <div className="col-start-2 flex flex-row justify-end gap-x-8 px-6 mt-2 text-Grey-700 text-p5 font-medium">
                 {Object.keys(languages).map((key, index) => {
                   return (
                     <div key={key}>
-                      <LocaleSwitcher locale={languages[key]} code={key} />
+                      <LocaleSwitcher
+                        locale={languages[key]}
+                        code={key}
+                        style={
+                          lang === key ? "border-b-2 border-b-Green-700" : ""
+                        }
+                      />
                     </div>
                   );
                 })}
@@ -115,7 +121,7 @@ export default async function RootLayout({ children, params }) {
                 </div>
               </div>
 
-              <div className="block laptop:hidden w-full">
+              <div className="laptop:hidden w-full">
                 <div className="fixed top-0 left-0 z-50 max-w-screen w-full">
                   <HamburgerMenu
                     tabs={tabs}
@@ -127,7 +133,7 @@ export default async function RootLayout({ children, params }) {
               </div>
             </div>
 
-            <main className="tablet:p-6 w-screen tablet:w-fit flex flex-col ">
+            <main className="p-6 w-screen flex flex-col justify-center items-center px-0 pt-0">
               <LoaderWrapper>{children}</LoaderWrapper>
             </main>
             <footer className="border-t-Green-500 border-2 bg-white w-full flex flex-col justify-center items-center ">
@@ -141,7 +147,7 @@ export default async function RootLayout({ children, params }) {
                 />
               </div>
 
-              <div className="text-Grey-500">
+              <div className="text-Grey-500 text-center">
                 Copyright © 2013 Milo company, All Rights Reserved ®
               </div>
               <div className="cursor-pointer py-2">

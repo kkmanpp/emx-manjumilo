@@ -37,7 +37,7 @@ export default async function TrendingProductViewer({
     );
 
   return (
-    <div className="grid grid-cols-4 gap-4 w-[65rem]">
+    <div className="grid grid-cols-1 w-full tablet:grid-cols-2 gap-4 tablet:px-2 laptop:grid-cols-4">
       {productList.map((item) => {
         return (
           <Card

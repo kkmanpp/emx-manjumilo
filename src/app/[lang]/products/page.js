@@ -8,7 +8,7 @@ export default async function Page({ params }) {
   const products = getProductsFromJson();
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center my-0 w-full largeMobile:my-4">
       <ProductViewer dictionary={t} lang={lang} productList={products} />
     </div>
   );

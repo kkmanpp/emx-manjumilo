@@ -1,14 +1,13 @@
-export default function VideoPlayer({ videoId }) {
-	//5XDNHx2MQ40
-	return (
-		<iframe
-			width={420}
-			height={315}
-			src={`https://www.youtube.com/embed/${videoId}`}
-			className="rounded-xl"
-			title="event-video"
-			allowFullScreen
-			loading="lazy"
-		></iframe>
-	);
+"use client";
+
+export default function VideoPlayer({ videoUrl }) {
+  return (
+    <iframe
+      src={videoUrl}
+      className="rounded-xl w-full aspect-video laptop:aspect-[16/9]"
+      title="event-video"
+      allowFullScreen
+      loading="lazy"
+    ></iframe>
+  );
 }

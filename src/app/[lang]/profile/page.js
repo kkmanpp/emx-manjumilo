@@ -26,25 +26,26 @@ export default async function Profile({ params }) {
     beauty_and_skincare,
   } = product_overview;
   return (
-    <div className="smallTablet:px-6 tablet:px-9 largeTablet:px-24 laptop:px-32 desktop:px-48 min-h-screen dark:text-gray-900">
-      {/* Company Overview */}
+    <div className="tablet:px-8 tablet:pt-4 laptop:w-[65rem] min-h-screen dark:text-gray-900 px-0 pt-0">
       <main className="mx-auto p-6 bg-white shadow-lg rounded-lg">
+        {/* Company Overview */}
         <section>
-          <div className="text-3xl font-semibold text-teal-700 mb-4">
+          {/* Title */}
+          <div className="text-2xl tablet:text-3xl font-semibold text-teal-700 mb-4 ">
             {sections.company_overview}
           </div>
-          <div className="flex flex-col largeTablet:flex-row gap-6">
+          <div className="tablet:grid tablet:grid-cols-[auto_auto] gap-6">
             {/* Image */}
-            <div className="relative w-36 h-36 smallTablet:w-48 smallTablet:h-48 largeTablet:w-64 largeTablet:h-64 order-1 largeTablet:order-2 largeTablet:flex-1 flex justify-center">
+            <div className="row-start-1 col-start-2 flex flex-row relative w-64 h-64 tablet:justify-self-end ">
               <Image
                 src="/profile.jpg"
                 alt="Company Overview"
-                className="absolute right-0 object-contain "
+                className="absolute right-0 object-fill "
                 fill
               />
             </div>
             {/* Content */}
-            <div className="text-xl order-2 largeTablet:order-1 largeTablet:flex-1 space-y-2">
+            <div className="row-start-1 col-start-1 text-xl space-y-2 text-base">
               <div>
                 <strong>{name.key}:</strong> {name.value}
               </div>
@@ -62,17 +63,19 @@ export default async function Profile({ params }) {
         </section>
         {/* Mission and Purpose */}
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold text-teal-700 mb-4">
+          <div className="text-2xl tablet:text-3xl font-semibold text-teal-700 mb-4 ">
             {sections.company_mission_and_purpose}
-          </h2>
-          <p className="text-lg">{company_mission_and_purpose.value}</p>
+          </div>
+          <p className="text-lg text-base">
+            {company_mission_and_purpose.value}
+          </p>
         </section>
 
         {/* Core Values */}
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold text-teal-700 mb-4">
+          <div className="text-2xl tablet:text-3xl font-semibold text-teal-700 mb-4 ">
             {sections.core_value}
-          </h2>
+          </div>
           <ul className="list-disc list-inside space-y-2">
             <li>
               <strong>{all_natural_ingredients.key}:</strong>{" "}
@@ -94,9 +97,9 @@ export default async function Profile({ params }) {
         </section>
         {/* Product Overview */}
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold text-teal-700 mb-4">
+          <div className="text-2xl tablet:text-3xl font-semibold text-teal-700 mb-4 ">
             {sections.product_overview}
-          </h2>
+          </div>
           <p className="mb-4">{product_overview.summary}</p>
           <ul className="list-disc list-inside space-y-2">
             <li>
@@ -117,10 +120,10 @@ export default async function Profile({ params }) {
         </section>
         {/* Future Outlook */}
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold text-teal-700 mb-4">
+          <div className="text-2xl tablet:text-3xl font-semibold text-teal-700 mb-4 ">
             {sections.company_future_outlook}
-          </h2>
-          <p className="text-lg">{company_future_outlook.value}</p>
+          </div>
+          <p className="text-lg text-base">{company_future_outlook.value}</p>
         </section>
       </main>
     </div>

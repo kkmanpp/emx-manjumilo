@@ -100,7 +100,7 @@ export default function ContactForm({ t }) {
   };
 
   return (
-    <div className="mobile:max-w-full tablet:max-w-3xl w-full mx-auto bg-white shadow-md rounded-md overflow-hidden">
+    <div className="p-4 w-full max-w-full mx-auto bg-white shadow-md rounded-md tablet:max-w-3xl laptop:w-[65rem]  ">
       <div className="p-4 tablet:p-6 laptop:p-10">
         <h1 className="text-xl tablet:text-2xl laptop:text-3xl font-bold text-gray-800 text-center">
           {contact.title}
@@ -124,6 +124,7 @@ export default function ContactForm({ t }) {
               id="name"
               name="name"
               value={formData.name}
+              autoComplete="name"
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             />
@@ -139,10 +140,11 @@ export default function ContactForm({ t }) {
               {formFields.phone.key}
             </label>
             <input
-              type="text"
+              type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
+              autoComplete="tel"
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             />
@@ -158,10 +160,11 @@ export default function ContactForm({ t }) {
               {formFields.email.key}
             </label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               value={formData.email}
+              autoComplete="email"
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             />
@@ -171,7 +174,7 @@ export default function ContactForm({ t }) {
           </div>
           <div>
             <label
-              htmlFor="message"
+              htmlFor="feedback"
               className="block text-sm font-medium text-gray-700"
             >
               {formFields.feedback.key}

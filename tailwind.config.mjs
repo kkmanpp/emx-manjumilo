@@ -7,13 +7,23 @@ export default {
   ],
   theme: {
     screens: {
-      smallMobile: "0px",
-      mobile: "480px",
-      smallTablet: "576px",
-      tablet: "640px", // @media(min-width: 640px)
-      largeTablet: "768px",
+      // smallMobile: "0px",
+      // mobile: "480px",
+      // smallTablet: "576px",
+      // tablet: "640px", // @media(min-width: 640px)
+      // largeTablet: "768px",
+      // laptop: "1024px",
+      // desktop: "1280px",
+      mobile: "0px",
+      largeMobile: "480px",
+      tablet: "768px",
       laptop: "1024px",
       desktop: "1280px",
+
+      //   desktop: "1280px",
+      //   laptop: { raw: "(max-width:1279px)" },
+      //   tablet: { raw: "(max-width:768px)" },
+      //   mobile: { raw: "(max-width:480px)" },
     },
     extend: {
       colors: {

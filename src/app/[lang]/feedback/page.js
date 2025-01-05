@@ -11,7 +11,7 @@ export default async function Page({ params }) {
   console.log(Object.keys(FEEDBACK_LIST));
 
   return (
-    <div className="w-[50rem] w-full max-w-screen-lg mx-auto px-4 my-4">
+    <div className=" w-full max-w-screen-lg mx-auto my-4 px-0 mt-0 tablet:p-4 laptop:w-[65rem]  ">
       {Object.keys(FEEDBACK_LIST).map((key, index) => {
         return (
           <FeedbackViewer
@@ -21,7 +21,7 @@ export default async function Page({ params }) {
           />
         );
       })}
-      <div className="text-red-600 text-center pt-4 text-p5">{t.reminder}</div>
+      <div className="text-red-600 text-center pt-4">{t.reminder}</div>
     </div>
   );
 }

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import LocaleSwitcher from "./LocaleSwitcher";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function HamburgerMenu({
   tabs,
@@ -10,13 +12,14 @@ export default function HamburgerMenu({
   languages,
   locale,
 }) {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
   return (
     <div className="relative">
       <button
-        className="absolute top-4 right-4 hover:text-Grey-400 z-50 flex items-center text-Grey-700 px-4 py-2 hover:shadow-lg z-50"
+        className="absolute top-4 right-4 hover:text-Grey-400 z-50 flex items-center text-Grey-700 px-4 py-2 hover:shadow-lg"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <svg
@@ -37,19 +40,28 @@ export default function HamburgerMenu({
 
       {/* Sliding Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-full bg-Green-700 z-40 transition-transform transform ${
+        className={`fixed top-0 left-0 h-full w-screen bg-Green-700 z-40 transition-transform transform ${
           menuOpen ? "translate-x-1/2" : "translate-x-full"
         }`}
       >
         {/* Menu Options */}
-        <div className="absolute top-[4rem] right-0 w-full">
+        <div className="absolute top-[4rem] right-0 w-full h-full mobile:overflow-auto">
+          {pathname}
           <ul className="list-none">
             {tabs.map((tab, index) => (
-              <li key={index} className="border-b border-Grey-800">
+              <li
+                key={index}
+                className={`${
+                  pathname === `/${locale}${tab.path}` &&
+                  "bg-Green-500 rounded-xl w-[50%]"
+                }`}
+              >
                 <Link
                   href={`/${locale}${tab.path}`}
                   className="block text-white px-4 py-3 hover:text-Grey-300"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
                 >
                   {tab.label}
                 </Link>
@@ -57,24 +69,41 @@ export default function HamburgerMenu({
             ))}
 
             {/* Language Option */}
-            <li className="border-b border-Grey-800 relative">
+            <li className="relative">
               <button
-                className="block text-white px-4 py-3 hover:text-Grey-300 w-full text-left"
+                className={`"block text-white px-4 py-3 w-[50%] text-left ${
+                  languageMenuOpen && "bg-Green-500"
+                }`}
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
               >
-                {languageTab}
+                <div className="grid grid-cols-[auto_auto]">
+                  <div> {languageTab}</div>
+                  <div className="flex flex-col items-end justify-center">
+                    <Image
+                      src={`${
+                        languageMenuOpen ? "/collapse" : "/expand"
+                      }-arrow.png`}
+                      alt="expand"
+                      className="object-contain w-[1rem]"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                </div>
               </button>
 
               {/* Sublist */}
               {languageMenuOpen && (
-                <ul className="absolute top-full left-0 bg-Grey-700 w-full">
+                <ul className="absolute top-full left-0 w-full">
                   {Object.keys(languages).map((key, index) => {
                     return (
-                      <li key={index} className="border-b border-Grey-600">
+                      <li key={index}>
                         <LocaleSwitcher
                           locale={languages[key]}
                           code={key}
-                          style="block text-white px-4 py-3 hover:text-Grey-300 w-full text-left"
+                          style={`block ${
+                            key === locale ? "text-Yellow-400" : "text-White"
+                          } px-4 py-3 hover:text-Grey-300 w-full text-left`}
                           additionalAction={() => {
                             setMenuOpen(false);
                             setLanguageMenuOpen(false);

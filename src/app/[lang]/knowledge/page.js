@@ -9,7 +9,7 @@ export default async function Page({ params }) {
   const KNOWLEDGE_LIST = t.knowledge;
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-screen-lg mx-auto px-4 my-4">
+    <div className="flex flex-col tablet:gap-4 w-full max-w-screen-lg mx-auto tablet:px-4 tablet:my-4 laptop:w-[65rem] dark:text-Grey-900">
       <KnowledgeCard title={KNOWLEDGE_LIST.knowledge6.title}>
         <div className="mx-4">{KNOWLEDGE_LIST.knowledge6.content}</div>
       </KnowledgeCard>
