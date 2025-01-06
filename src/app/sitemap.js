@@ -33,7 +33,7 @@ export default async function sitemap() {
     });
   });
 
-  const products = allProducts.map((item) => {
+  const products = allProducts.flatMap((item) => {
     return {
       url: `${baseUrl}/products/${item.sku}`,
       lastModified: new Date(),
