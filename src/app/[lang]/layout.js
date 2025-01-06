@@ -49,6 +49,12 @@ export const metadata = {
     type: "website",
     siteName: "譽俊貿易-米潞健康一族 EMX-Manjumilo",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "萬壽之露",
+    description: "來自長壽島沖繩的禮物， 帶給您新的生活習慣",
+    images: ["/opengraph-image.jpg"],
+  },
 };
 export async function generateStaticParams() {
   return [{ lang: "cht" }, { lang: "chs" }];
