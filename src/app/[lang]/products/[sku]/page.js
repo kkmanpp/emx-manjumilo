@@ -8,7 +8,7 @@ export async function generateMetadata({ params }, parent) {
   // const product = await fetch(`${process.env.BASEURL}/api/products/${sku}`, {
   //   method: "GET",
   // }).then((res) => res.json());
-  const product = getProductBySkuFromJson(sku);
+  const product = await getProductBySkuFromJson(sku);
 
   const parentMetadata = await parent;
   const previousImages = parentMetadata?.openGraph?.images || [];
