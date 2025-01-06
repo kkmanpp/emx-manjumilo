@@ -1,10 +1,9 @@
 import { getProductsFromJson } from "@/lib/products";
 export default async function sitemap() {
-  const baseUrl = process.env.BASEURL || "http://localhost:3000";
-  console.log(baseUrl);
+  const baseUrl = process.env.BASEURL || "https://emx-manjumilo.vercel.app";
   const tabs = ["profile", "contact", "feedback", "knowledge", "safeguard"];
 
-  const allProducts = getProductsFromJson();
+  const allProducts = (await getProductsFromJson()) || [];
 
   const pages = [
     {
@@ -12,13 +11,16 @@ export default async function sitemap() {
       lastModified: new Date(),
       changeFrequency: "yearly",
       alternates: {
-        languages: { cht: `${baseUrl}/cht`, chs: `${baseUrl}/chs` },
+        languages: {
+          cht: `${baseUrl}/cht`,
+          chs: `${baseUrl}/chs`,
+        },
       },
     },
   ];
 
   tabs.forEach((tab) => {
-    let page = {
+    pages.push({
       url: `${baseUrl}/${tab}`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -28,10 +30,10 @@ export default async function sitemap() {
           chs: `${baseUrl}/chs/${tab}`,
         },
       },
-    };
-    pages.push(page);
+    });
   });
-  let products = allProducts.map((item) => {
+
+  const products = allProducts.map((item) => {
     return {
       url: `${baseUrl}/products/${item.sku}`,
       lastModified: new Date(),
@@ -44,7 +46,6 @@ export default async function sitemap() {
       },
     };
   });
-  //   console.log(products);
 
   return [...pages, ...products];
 }
