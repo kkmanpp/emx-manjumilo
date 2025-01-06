@@ -10,10 +10,12 @@ export async function generateMetadata({ params }) {
   // }).then((res) => res.json());
   const product = getProductBySkuFromJson(sku);
 
+  const previousImages = (await parent).openGraph?.images || [];
+
   return {
     title: product?.name?.["cht"],
     openGraph: {
-      images: [product.images],
+      images: [product.image[0], ...previousImages],
     },
   };
 }
