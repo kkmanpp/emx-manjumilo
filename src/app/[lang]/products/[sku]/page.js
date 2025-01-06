@@ -2,7 +2,7 @@ import { getDictionary } from "../../dictionaries";
 import ProductDetailViewer from "./components/ProductDetailViewer";
 import { getProductBySkuFromJson } from "@/lib/products";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }, parent) {
   const sku = (await params).sku;
 
   // const product = await fetch(`${process.env.BASEURL}/api/products/${sku}`, {
@@ -10,7 +10,8 @@ export async function generateMetadata({ params }) {
   // }).then((res) => res.json());
   const product = getProductBySkuFromJson(sku);
 
-  const previousImages = (await parent).openGraph?.images || [];
+  const parentMetadata = await parent;
+  const previousImages = parentMetadata?.openGraph?.images || [];
 
   return {
     title: product?.name?.["cht"],
