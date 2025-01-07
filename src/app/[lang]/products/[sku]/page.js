@@ -3,7 +3,7 @@ import ProductDetailViewer from "./components/ProductDetailViewer";
 import { getProductBySkuFromJson } from "@/lib/products";
 
 export async function generateMetadata({ params }, parent) {
-  const sku = (await params).sku;
+  const { sku } = await params;
 
   // const product = await fetch(`${process.env.BASEURL}/api/products/${sku}`, {
   //   method: "GET",
