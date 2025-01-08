@@ -21,7 +21,6 @@ export default async function Home({ params }) {
         dictionary={t}
         productList={productList}
       />
-
       <SectionLayout sections={sectionDefinitions} />
     </div>
   );
