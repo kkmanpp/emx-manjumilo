@@ -57,7 +57,20 @@ export default function ProductDetailCard({ lang, product, dictionary }) {
             <div>{product.directions[lang]}</div>
           </div>
         )}
-        {product.nutrition_key[lang] && (
+        {product.nutrition?.length > 0 && (
+          <div className="my-4">
+            <div className="font-semibold">{t.nutrition}</div>
+            <div>
+              <Table
+                title={product.per_unit_contains?.[lang] || ""}
+                name={product.nutrition.map((item) => item.key[lang])}
+                value={product.nutrition.map((item) => item.value[lang])}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* {product.nutrition_key[lang] && (
           <div className="my-4">
             <div className="font-semibold">{t.nutrition}</div>
             <div>
@@ -68,7 +81,7 @@ export default function ProductDetailCard({ lang, product, dictionary }) {
               />
             </div>
           </div>
-        )}
+        )} */}
         {product.suitable_for[lang] && (
           <div className="">
             <div className="font-semibold my-2">{t.suitable_for}</div>
