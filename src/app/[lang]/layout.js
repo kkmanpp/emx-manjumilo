@@ -97,7 +97,7 @@ export default async function RootLayout({ children, params }) {
             <div className="w-full">
               <Image
                 src={company}
-                alt="company-img"
+                alt="米潞健康一族 Company"
                 height={500}
                 className="object-contain"
               />
@@ -163,7 +163,12 @@ export default async function RootLayout({ children, params }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image src={facebook} alt="facebook" height={40} width={40} />
+                  <Image
+                    src={facebook}
+                    alt="米潞健康一族 Facebook page link"
+                    height={40}
+                    width={40}
+                  />
                 </a>
               </div>
             </footer>
