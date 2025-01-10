@@ -1,22 +1,21 @@
 import { getDictionary } from "../../dictionaries";
 import ProductDetailViewer from "./components/ProductDetailViewer";
-import { getProductBySkuFromJson } from "@/lib/products";
+import { getProductBySku } from "@/lib/products";
 
 export async function generateMetadata({ params }, parent) {
-  const { sku } = await params;
-
-  // const product = await fetch(`${process.env.BASEURL}/api/products/${sku}`, {
-  //   method: "GET",
-  // }).then((res) => res.json());
-  const product = await getProductBySkuFromJson(sku);
-
+  const { sku, lang } = await params;
+  const product = await getProductBySku(sku);
   const parentMetadata = await parent;
   const previousImages = parentMetadata?.openGraph?.images || [];
 
+  const productImage = Array.isArray(product.image)
+    ? product.image[0].url
+    : product.image.url;
+
   return {
-    title: product?.name?.["cht"],
+    title: product?.name?.[lang],
     openGraph: {
-      images: [product.image[0], ...previousImages],
+      images: [productImage, ...previousImages],
     },
   };
 }
@@ -25,7 +24,7 @@ export default async function Page({ params }) {
   const { sku, lang } = await params;
   const t = await getDictionary(lang);
 
-  const product = getProductBySkuFromJson(sku);
+  const product = await getProductBySku(sku);
 
   return (
     <div className="w-full laptop:w-[40rem] flex flex-col justify-center items-center">

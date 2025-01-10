@@ -1,11 +1,11 @@
 import ProductViewer from "./components/ProductViewer";
 import { getDictionary } from "../dictionaries";
-import { getProductsFromJson } from "@/lib/products";
+import { getProducts } from "@/lib/products";
 
 export default async function Page({ params }) {
   const { lang } = await params;
   const t = await getDictionary(lang);
-  const products = getProductsFromJson();
+  const products = await getProducts();
 
   return (
     <div className="flex flex-col justify-center items-center my-0 w-full largeMobile:my-4">

@@ -9,8 +9,8 @@
     },
     "nutrition": [],
     "image": [
-      "/Manju-no-Shizuku-Fresh-Pack(10x10).png",
-      "/Manju-no-Shizuku-Fresh-Pack(10x30).png"
+      { "url": "/Manju-no-Shizuku-Fresh-Pack(10x10).png" },
+      { "url": "/Manju-no-Shizuku-Fresh-Pack(10x30).png" }
     ],
     "size": [
       { "cht": "10毫升/袋*30袋", "chs": "10毫升/袋*30袋" },
@@ -71,7 +71,9 @@
       }
     ],
 
-    "image": ["/Manju-No-Shizuku-the-Dew-Of-Longevity-Anti-Aging.png"],
+    "image": [
+      { "url": "/Manju-No-Shizuku-the-Dew-Of-Longevity-Anti-Aging.png" }
+    ],
     "size": [
       { "cht": "500毫升", "chs": "500毫升" },
       { "cht": "195毫升", "chs": "195毫升" }
@@ -123,7 +125,10 @@
         "value": { "cht": "0千卡", "chs": "0千卡" }
       }
     ],
-    "image": ["/okinawa-lemon.png", "/okinawa-lemon-pack.png"],
+    "image": [
+      { "url": "/okinawa-lemon.png" },
+      { "url": "/okinawa-lemon-pack.png" }
+    ],
     "size": [{ "cht": "50毫升/瓶*10瓶", "chs": "50毫升/瓶*10瓶" }],
 
     "ingredients": {
@@ -166,7 +171,10 @@
         "value": { "cht": "18千卡", "chs": "18千卡" }
       }
     ],
-    "image": ["/genki-papaya.png", "/genki-papaya-pack.png"],
+    "image": [
+      { "url": "/genki-papaya.png" },
+      { "url": "/genki-papaya-pack.png" }
+    ],
     "size": [{ "cht": "50毫升/瓶*10瓶", "chs": "50毫升/瓶*10瓶" }],
 
     "ingredients": {
@@ -201,7 +209,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/coral-calcium.jpg"],
+    "image": [{ "url": "/coral-calcium.jpg" }],
     "size": [{ "cht": "270粒（30日份）", "chs": "270粒（30日份）" }],
 
     "ingredients": {
@@ -239,7 +247,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/papaya-product.jpg", "/papaya-pack.png"],
+    "image": [{ "url": "/papaya-product.jpg" }, { "url": "/papaya-pack.png" }],
     "size": [{ "cht": "150粒（30日份）", "chs": "150粒（30日份）" }],
     "ingredients": {
       "cht": "青木瓜(含有豐富的鉀、beta胡蘿蔔素、葉酸、維生素C和食物纖維)、beta胡蘿蔔素（具有預防衰老的功效。beta胡蘿蔔素的一部分在體內還可以轉化成維生素A， 具有保護眼睛、柔嫩肌膚的作用。可以促進人體器官生長，促進人體全身機能的生理活性）、維生素E（具有預防衰老、疾病等生活方式的優質維生素）",
@@ -306,7 +314,7 @@
         "value": { "cht": "7毫克", "chs": "7毫克" }
       }
     ],
-    "image": ["/salt-details.png", "/salt.jpg"],
+    "image": [{ "url": "/salt-details.png" }, { "url": "/salt.jpg" }],
     "size": [
       { "cht": "袋裝100克", "chs": "袋装100克" },
       { "cht": "瓶裝90克", "chs": "瓶装90克" }
@@ -341,7 +349,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/brown-sugar-100.png"],
+    "image": [{ "url": "/brown-sugar-100.png" }],
     "size": [{ "cht": "袋裝120克", "chs": "袋装120克" }],
 
     "ingredients": {
@@ -377,7 +385,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/brown-sugar-with-salt.png"],
+    "image": [{ "url": "/brown-sugar-with-salt.png" }],
     "size": [{ "cht": "袋裝120克", "chs": "袋装120克" }],
 
     "ingredients": {
@@ -410,7 +418,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/brown-sugar-candy.png"],
+    "image": [{ "url": "/brown-sugar-candy.png" }],
     "size": [{ "cht": "袋裝100克", "chs": "袋装100克" }],
 
     "ingredients": {
@@ -443,7 +451,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/collagen-vinegar.png"],
+    "image": [{ "url": "/collagen-vinegar.png" }],
     "size": [{ "cht": "500毫升", "chs": "500毫升" }],
 
     "ingredients": {
@@ -482,7 +490,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/Black-Koji-Moromi-Vinegar.jpg"],
+    "image": [{ "url": "/Black-Koji-Moromi-Vinegar.jpg" }],
     "size": [{ "cht": "720毫升", "chs": "720毫升" }],
 
     "ingredients": {
@@ -521,7 +529,7 @@
     },
     "per_unit_contains": {},
     "nutrition": [],
-    "image": ["/collagen-jelly.png"],
+    "image": [{ "url": "/collagen-jelly.png" }],
     "size": [{ "cht": "10克*30包", "chs": "10克*30包" }],
 
     "ingredients": {

@@ -1,13 +1,13 @@
 import { getDictionary } from "./dictionaries";
 import TrendingProductViewer from "./products/components/TrendingProductViewer";
-import { getTrendingProductsFromJson } from "@/lib/products";
+import { getTrendingProducts } from "@/lib/products";
 import { getSectionDefinitions } from "../../lib/sectionDefinitions";
 import SectionLayout from "@/components/SectionLayout";
 
 export default async function Home({ params }) {
   const { lang } = await params;
   const t = await getDictionary(lang);
-  const productList = getTrendingProductsFromJson();
+  const productList = await getTrendingProducts();
 
   const sectionDefinitions = getSectionDefinitions(t).homepage;
 
