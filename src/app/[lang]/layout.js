@@ -24,6 +24,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL(process.env.BASEURL),
   title: {
     template: "%s | 譽俊貿易-米潞健康一族 EMX-Manjumilo",
     default: "譽俊貿易-米潞健康一族 EMX-Manjumilo",
@@ -41,7 +42,7 @@ export const metadata = {
   ],
   openGraph: {
     images: [
-      { url: "/opengraph-image.jpg", atl: "萬壽之露", width: 800, height: 400 },
+      { url: "/opengraph-image.jpg", alt: "萬壽之露", width: 800, height: 400 },
     ],
     title: "萬壽之露",
     description: "來自長壽島沖繩的禮物， 帶給您新的生活習慣",

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Table from "@/components/Table";
+import { getImageSrc } from "@/utils/image";
 
 export default function ProductDetailCard({ lang, product, dictionary }) {
   const t = dictionary.product;
-  console.log("product:", product);
+
   return (
     <div className="grid grid-rows-[auto_auto] gap-4 bg-white tablet:rounded-2xl shadow-lg p-4 dark:text-Grey-900  rounded-none">
       <div className="grid grid-cols-2 gap-x-4">
@@ -14,10 +15,15 @@ export default function ProductDetailCard({ lang, product, dictionary }) {
               : "grid-cols-1 justify-self-center"
           }`}
         >
-          {product?.image?.map((product, index) => {
+          {product?.image?.map((image, index) => {
             return (
               <div key={index} className="w-auto">
-                <Image src={product} width={150} height={300} alt="product" />
+                <Image
+                  src={getImageSrc(image.url)}
+                  width={150}
+                  height={300}
+                  alt="product"
+                />
               </div>
             );
           })}
@@ -51,7 +57,7 @@ export default function ProductDetailCard({ lang, product, dictionary }) {
           <div className="font-semibold">{t.ingredients}</div>
           <div>{product.ingredients[lang]}</div>
         </div>
-        {product.directions[lang] && (
+        {product.directions && (
           <div className="my-4">
             <div className="font-semibold">{t.directions}</div>
             <div>{product.directions[lang]}</div>
@@ -82,19 +88,19 @@ export default function ProductDetailCard({ lang, product, dictionary }) {
             </div>
           </div>
         )} */}
-        {product.suitable_for[lang] && (
+        {product.suitable_for && (
           <div className="">
             <div className="font-semibold my-2">{t.suitable_for}</div>
             <div>{product.suitable_for[lang]}</div>
           </div>
         )}
-        {product.advisory_info[lang] && (
+        {product.advisory_info && (
           <div className="text-p5 text-Grey-600 mt-4">
             <div className="font-semibold ">{t.advisory_info}</div>
             <div>{product.advisory_info[lang]}</div>
           </div>
         )}
-        {product.reminder[lang] && (
+        {product.reminder && (
           <div className="text-p5 text-Grey-600 mt-4">
             <div className="font-semibold">{t.reminder}</div>
             <div>{product.reminder[lang]}</div>

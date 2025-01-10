@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getImageSrc } from "@/utils/image";
 
 export default function ProductOverviewCard({ lang, product, onClick }) {
   return (
@@ -8,7 +9,7 @@ export default function ProductOverviewCard({ lang, product, onClick }) {
     >
       <div className="flex flex-col justify-center items-cener">
         <Image
-          src={product.image[0]}
+          src={getImageSrc(product.image[0].url)}
           alt="product"
           height={200}
           width={200}

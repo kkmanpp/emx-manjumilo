@@ -1,9 +1,9 @@
-import { getProductsFromJson } from "@/lib/products";
+import { getProducts } from "@/lib/products";
 export default async function sitemap() {
   const baseUrl = process.env.BASEURL || "https://emx-manjumilo.vercel.app";
   const tabs = ["profile", "contact", "feedback", "knowledge", "safeguard"];
 
-  const allProducts = (await getProductsFromJson()) || [];
+  const allProducts = (await getProducts()) || [];
 
   const pages = [
     {
