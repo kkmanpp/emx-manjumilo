@@ -11,7 +11,16 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   images: {
-    domains: ["localhost", "emx-manjumilo.vercel.app"], // Add "localhost" to the allowed domains
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost", // Add "localhost" to the allowed domains
+      },
+      {
+        protocol: "https",
+        hostname: "emx-manjumilo.vercel.app",
+      },
+    ],
   },
   compiler: isProd
     ? {
